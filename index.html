@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>418 John Street North - Due Diligence &amp; Feasibility Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-orange: #FF7A3D;
+            --color-orange-light: rgba(255, 122, 61, 0.08);
+            --color-orange-mid: rgba(255, 122, 61, 0.15);
+            --color-charcoal: #3F3A37;
+            --color-beige: #EFE9E5;
+            --color-white: #FFFFFF;
+            --color-text: #1F1F1F;
+            --color-text-light: #5a5550;
+            --color-border: #e0dbd6;
+            --font-headline: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --radius: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-beige);
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border-radius: var(--radius);
+            box-shadow: 0 1px 4px rgba(63, 58, 55, 0.08);
+            overflow: hidden;
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 48px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-orange);
+        }
+
+        .header-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        header h1 {
+            font-family: var(--font-headline);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        /* ── Metadata Bar ── */
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg) 48px;
+            background: var(--color-beige);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .metadata-item {
+            padding: var(--spacing-md);
+            background: var(--color-white);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--color-orange);
+        }
+
+        .metadata-item label {
+            font-weight: 600;
+            color: var(--color-text-light);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .metadata-item span {
+            display: block;
+            color: var(--color-text);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* ── Disclaimer ── */
+        .disclaimer {
+            padding: var(--spacing-md) 48px;
+            background: var(--color-orange-light);
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        /* ── Table of Contents ── */
+        .toc {
+            padding: var(--spacing-xl) 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .toc h2 {
+            font-family: var(--font-headline);
+            font-size: 1.4rem;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-orange);
+            display: inline-block;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-sm);
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-sm);
+        }
+
+        .toc-number {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            color: var(--color-orange);
+            font-size: 1rem;
+            min-width: 28px;
+        }
+
+        .toc-item a {
+            color: var(--color-charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .toc-item a:hover {
+            color: var(--color-orange);
+        }
+
+        /* ── Content Area ── */
+        .content {
+            padding: var(--spacing-2xl) 48px;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--color-charcoal);
+        }
+
+        .section-number {
+            font-family: var(--font-headline);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-orange);
+        }
+
+        .section-header h2 {
+            font-family: var(--font-headline);
+            color: var(--color-charcoal);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        h3 {
+            font-family: var(--font-headline);
+            color: var(--color-charcoal);
+            font-size: 1.15rem;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        h4 {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.75;
+        }
+
+        /* ── Callout Boxes ── */
+        .callout {
+            background: var(--color-beige);
+            border-left: 4px solid var(--color-orange);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-charcoal {
+            background: rgba(63, 58, 55, 0.04);
+            border-left-color: var(--color-charcoal);
+        }
+
+        .callout-charcoal .callout-title {
+            color: var(--color-charcoal);
+        }
+
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            font-size: 0.85rem;
+        }
+
+        thead th {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        thead th:first-child {
+            border-radius: var(--radius) 0 0 0;
+        }
+
+        thead th:last-child {
+            border-radius: 0 var(--radius) 0 0;
+        }
+
+        td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(239, 233, 229, 0.3);
+        }
+
+        tr:hover {
+            background-color: var(--color-orange-light);
+        }
+
+        /* ── Lists ── */
+        ul, ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.7;
+        }
+
+        li::marker {
+            color: var(--color-orange);
+        }
+
+        /* ── Check list ── */
+        .check-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .check-list li {
+            padding-left: var(--spacing-lg);
+            position: relative;
+        }
+
+        .check-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--color-orange);
+            font-weight: 700;
+        }
+
+        /* ── Badges ── */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-orange {
+            background: var(--color-orange-mid);
+            color: #c25a20;
+        }
+
+        .badge-charcoal {
+            background: rgba(63, 58, 55, 0.1);
+            color: var(--color-charcoal);
+        }
+
+        /* ── Stat Cards ── */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--color-beige);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .stat-card .stat-value {
+            font-family: var(--font-headline);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-orange);
+            display: block;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.78rem;
+            color: var(--color-text-light);
+            margin-top: 4px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Persona Cards ── */
+        .persona-card {
+            background: var(--color-beige);
+            border-radius: var(--radius);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
+            border-top: 4px solid var(--color-orange);
+        }
+
+        .persona-card h4 {
+            font-family: var(--font-headline);
+            font-size: 1.1rem;
+            color: var(--color-charcoal);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        /* ── Sources ── */
+        .sources-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .sources-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.82rem;
+        }
+
+        .sources-list a {
+            color: var(--color-orange);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .sources-list a:hover {
+            text-decoration: underline;
+        }
+
+        .source-category {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-charcoal);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* ── Summary Box ── */
+        .summary-box {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            border-radius: var(--radius);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .summary-box h3 {
+            color: var(--color-orange);
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+
+        .summary-box p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .summary-box ul {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .summary-box li::marker {
+            color: var(--color-orange);
+        }
+
+        .summary-driver {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .driver-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            border-left: 3px solid var(--color-orange);
+        }
+
+        .driver-card h4 {
+            color: var(--color-orange);
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .driver-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--color-charcoal);
+            color: rgba(255, 255, 255, 0.5);
+            padding: var(--spacing-lg) 48px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+
+            header, .metadata, .toc, .content, .disclaimer, footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .persona-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .summary-driver {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .toc-item a {
+                color: var(--color-text);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ═══ HEADER ═══ -->
+        <header>
+            <div class="header-eyebrow">Team Shane | Due Diligence &amp; Feasibility Study</div>
+            <h1>418 John Street North</h1>
+            <div class="header-subtitle">Hamilton, Ontario &mdash; Market Research Profile</div>
+        </header>
+
+        <!-- ═══ METADATA ═══ -->
+        <div class="metadata">
+            <div class="metadata-item">
+                <label>Report Date</label>
+                <span>January 29, 2026</span>
+            </div>
+            <div class="metadata-item">
+                <label>Primary Study Area</label>
+                <span>1 km radius around 418 John St N</span>
+            </div>
+            <div class="metadata-item">
+                <label>Secondary Analysis</label>
+                <span>3 km radius; City of Hamilton</span>
+            </div>
+            <div class="metadata-item">
+                <label>Data Currency</label>
+                <span>Dec 2025 &ndash; Jan 2026 (Sales &amp; Rents); 2021 Census (Demographics)</span>
+            </div>
+        </div>
+
+        <!-- ═══ DISCLAIMER ═══ -->
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This analysis addresses market factors only. No planning, zoning, policy, or permitting guidance is included. Census data is from 2021 (most recent enumeration) and should be treated as directional. All forecasts are labelled as projections or estimates.
+        </div>
+
+        <!-- ═══ TABLE OF CONTENTS ═══ -->
+        <nav class="toc">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <div class="toc-item">
+                    <span class="toc-number">01</span>
+                    <a href="#area-vibe">Area Vibe &amp; Attractions</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">02</span>
+                    <a href="#demographics">Demographics &amp; Household Profile</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">03</span>
+                    <a href="#housing-stock">Housing Stock &amp; What People Live In</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">04</span>
+                    <a href="#for-sale">For-Sale Market</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">05</span>
+                    <a href="#rental">Rental Market</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">06</span>
+                    <a href="#competitive">Competitive Set &amp; Pipeline</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">07</span>
+                    <a href="#target-user">Target End-User &amp; Product Fit</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">08</span>
+                    <a href="#sources">Sources Appendix</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">09</span>
+                    <a href="#summary">Final Summary &amp; Market Opportunity</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ═══ CONTENT ═══ -->
+        <div class="content">
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 1: AREA VIBE & ATTRACTIONS          -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="area-vibe">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2>Area Vibe &amp; Attractions</h2>
+                </div>
+
+                <h3>The John Street North Corridor: Downtown Hamilton's Emerging Hub</h3>
+                <p>418 John Street North sits in the Hamilton Centre / Downtown Core, at the intersection of two transformational forces:</p>
+                <ul>
+                    <li><strong>James Street North</strong> (parallel, 1 block west): The city's cultural and dining renaissance &mdash; newly reinvigorated with elevated restaurants, independent retailers, caf&eacute;s, and boutiques opening throughout 2024&ndash;2025.</li>
+                    <li><strong>Downtown Core</strong> (broader context): Historic mixed-use neighbourhood undergoing gradual revitalization with new businesses, improved streetscape, and growing residential interest.</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-title">Transit Advantage</div>
+                    <p>The immediate area benefits from proximity to the <strong>Hamilton GO Centre</strong> (480 m south on John St S, approximately 5&ndash;6 minute walk), making this highly accessible for commuters to Toronto and the broader GTA.</p>
+                </div>
+
+                <h3>Nature &amp; Recreation</h3>
+                <h4>Within 1 km Radius</h4>
+                <ul>
+                    <li><strong>West Harbour Waterfront:</strong> 1.2 km south; roller skating, trolley rides, waterfront trails, events, floating museum</li>
+                    <li><strong>Bayfront Park:</strong> Less than 1 km; picnic areas, sunset views, natural green space with public water access</li>
+                    <li><strong>Escarpment Rail Trail:</strong> Accessible via downtown, connects to broader Hamilton trail network for walking and cycling</li>
+                    <li><strong>Waterfront Trail:</strong> Connected system allowing pedestrian/cycling access eastward and westward</li>
+                    <li>Several small urban parks scattered through downtown core</li>
+                </ul>
+                <h4>3 km Context</h4>
+                <p>Hamilton is surrounded by the Niagara Escarpment, with numerous waterfalls and conservation areas (Spencer Creek, Dundas Peak area) approximately 5&ndash;10 km away &mdash; strong for weekend recreation.</p>
+
+                <h3>Urban Amenities: Dining, Retail &amp; Culture</h3>
+                <h4>James Street North (Directly West)</h4>
+                <p>Transformed into Hamilton's dining and entertainment destination with significant new openings in 2024&ndash;2025:</p>
+                <ul>
+                    <li><strong>Elevated dining:</strong> Per'So'Na (contemporary Italian), Berkeley North (West Coast, Michelin Guide recommended), The French (bistro), Henry's on James (jazz lounge), Conversate (steakhouse/seafood), Shakespeare's (classic steakhouse)</li>
+                    <li><strong>Casual &amp; specialty:</strong> Biggs Ribs, Niku Niku (all-you-can-eat Japanese/Korean BBQ), Kinton Ramen, Bonitos Pizzeria, Mulberry (organic/local focus)</li>
+                    <li><strong>Coffee &amp; quick service:</strong> Red Church Cafe + Gallery, Cafe Oranje, Saint James (short stacks/coffee), Grandad's Donuts</li>
+                    <li><strong>Retail:</strong> Amici (size-inclusive clothing, 17 John St N), The Market On (60 James St N &mdash; grocery/convenience hybrid with beer/wine), specialty shops</li>
+                </ul>
+
+                <h4>King Street East / William Street (2&ndash;3 Block Walk)</h4>
+                <ul>
+                    <li>Piano Piano (Italian restaurant), Daigyo Cafe (authentic Japanese tea house), The Dapper Dog Den (pet grooming), fitness centres, bars, additional retail</li>
+                </ul>
+
+                <h4>Broader Downtown</h4>
+                <ul>
+                    <li><strong>Jackson Square</strong> (1 km south): Major shopping mall with Nations grocery, movie theatre, food court</li>
+                    <li><strong>Hess Village &amp; downtown core:</strong> Additional shopping, galleries, antique shops</li>
+                </ul>
+
+                <h3>Healthcare &amp; Institutions</h3>
+                <ul>
+                    <li><strong>St. Joseph's Hospital:</strong> 0.5 km north on James St N &mdash; major regional health anchor</li>
+                    <li><strong>Jackson Square:</strong> Community hub with civic presence</li>
+                    <li><strong>Hamilton Public Library:</strong> Downtown location accessible</li>
+                </ul>
+
+                <h3>GO Transit &amp; Commuting</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hamilton GO Centre</td>
+                            <td>480 m south; 5&ndash;6 min walk from 418 John St N</td>
+                        </tr>
+                        <tr>
+                            <td>GO Rail (Lakeshore West)</td>
+                            <td>3 peak-hour departures weekdays to Toronto Union Station (~1 hr 14 min)</td>
+                        </tr>
+                        <tr>
+                            <td>GO Bus</td>
+                            <td>Downtown hub for regional and local transit; frequent service</td>
+                        </tr>
+                        <tr>
+                            <td>HSR (Local Bus)</td>
+                            <td>Multiple downtown routes</td>
+                        </tr>
+                        <tr>
+                            <td>Commute to Toronto</td>
+                            <td>~1 hr 14 min (train) | ~1 hr 15 min (bus) | ~50 min (car, light traffic)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Cultural &amp; Civic Anchors</h3>
+                <ul>
+                    <li>Downtown arts scene: galleries, live music venues, rotating exhibitions</li>
+                    <li>West Harbour Waterfront events: seasonal programming, festivals, public markets</li>
+                    <li>TD Coliseum: Iron Cow Public House (celebrity chef Matty Matheson's English pub concept)</li>
+                    <li>City Hall / civic institutions: proximity reinforces downtown as city centre</li>
+                    <li>International Village / James Street: cultural diversity with varied cuisines and community presence</li>
+                </ul>
+
+                <h3>Drivers of Rental Demand</h3>
+                <div class="callout">
+                    <div class="callout-title">Key Finding</div>
+                    <ul>
+                        <li><strong>GO Transit access:</strong> Attracts GTA commuters, remote workers, and anyone seeking affordability with urban walkability</li>
+                        <li><strong>Downtown revitalization:</strong> Restaurant/bar culture revival drawing young professionals</li>
+                        <li><strong>McMaster University spillover:</strong> Upper-year students seeking downtown independence; faculty/staff housing</li>
+                        <li><strong>Hospital anchor:</strong> St. Joseph's Hospital nearby drives health care worker rental demand</li>
+                        <li><strong>Affordability vs. amenity balance:</strong> Lower rents than downtown Toronto while gaining transit access and emerging cultural scene</li>
+                    </ul>
+                </div>
+
+                <h3>Who This Area Naturally Appeals To</h3>
+                <ul class="check-list">
+                    <li>GTA commuters and remote workers seeking affordable walkable neighbourhoods with GO access</li>
+                    <li>Young professionals (25&ndash;40) drawn to emerging downtown dining/culture scene</li>
+                    <li>McMaster students (upper years) seeking off-campus independence</li>
+                    <li>Health care workers employed at St. Joseph's Hospital or other downtown facilities</li>
+                    <li>Couples without children valuing urban lifestyle over family space</li>
+                    <li>Single renters seeking downtown activation and walkable streets</li>
+                    <li>Recent immigrants and newcomers to Canada (identified as an "arrival city")</li>
+                    <li>Retirees and downsizers seeking urban walkability and reduced maintenance</li>
+                </ul>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 2: DEMOGRAPHICS                     -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="demographics">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2>Demographics &amp; Household Profile</h2>
+                </div>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Data Note</div>
+                    <p>418 John Street North is located within Census Tract 0032.00 (North Hamilton / Downtown Core boundary area). Data sourced from 2021 Census &mdash; 4+ years old but the most reliable available. Local sources suggest growth in young adult and newcomer populations has continued since enumeration.</p>
+                </div>
+
+                <h3>Population Level &amp; Direction</h3>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">569,355</span>
+                        <span class="stat-label">Hamilton Population (2021)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">+6%</span>
+                        <span class="stat-label">5-Year Growth (2016&ndash;2021)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">222,805</span>
+                        <span class="stat-label">Occupied Dwellings (2021)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">~441K</span>
+                        <span class="stat-label">CMA Employed Residents (2025)</span>
+                    </div>
+                </div>
+
+                <p><strong>North Hamilton / Downtown area direction:</strong> North Hamilton CT 66 &amp; 67 showed just under 6,800 residents in 2021, relatively flat over the prior decade. Area is stabilizing after earlier decline; new development and downtown focus may reverse the trend.</p>
+
+                <h3>Age Distribution (2021 Census)</h3>
+
+                <h4>Hamilton City-Wide</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Age Cohort</th>
+                            <th>% of Population</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ages 18&ndash;34</td>
+                            <td>~27%</td>
+                            <td>Young adult cohort, stronger than pre-pandemic</td>
+                        </tr>
+                        <tr>
+                            <td>Ages 35&ndash;54</td>
+                            <td>~30%</td>
+                            <td>Core working / family years</td>
+                        </tr>
+                        <tr>
+                            <td>Ages 55+</td>
+                            <td>~27%</td>
+                            <td>Growing retirement cohort</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>North Hamilton / Downtown Census Tracts (CT 66 &amp; 67)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Age Cohort</th>
+                            <th>% of Local Pop.</th>
+                            <th>vs. City Average</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ages 0&ndash;17</td>
+                            <td>~24.8%</td>
+                            <td>Declining; fewer children than city average</td>
+                        </tr>
+                        <tr>
+                            <td>Ages 18&ndash;24</td>
+                            <td>~18&ndash;21%</td>
+                            <td>Significantly higher than city (~15%); student/young adult concentration</td>
+                        </tr>
+                        <tr>
+                            <td>Ages 25&ndash;54</td>
+                            <td>~41.4%</td>
+                            <td>Higher than city; CT 66.00 shows 27% in 25&ndash;39 range vs. 21% city</td>
+                        </tr>
+                        <tr>
+                            <td>Ages 55+</td>
+                            <td>~17&ndash;19%</td>
+                            <td>Lower than city average</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout">
+                    <div class="callout-title">Key Finding</div>
+                    <p>North Hamilton skews young adult and young professional; lower child population suggests fewer families; strong renter appeal to the 25&ndash;39 age group.</p>
+                </div>
+
+                <h3>Household Composition</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Hamilton City-Wide</th>
+                            <th>North Hamilton / Downtown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Owner-Occupied</td>
+                            <td>~68%</td>
+                            <td>Lower (est. 50&ndash;60%)</td>
+                        </tr>
+                        <tr>
+                            <td>Renter-Occupied</td>
+                            <td>~32% (above Ontario avg)</td>
+                            <td>Est. 40&ndash;50% (higher concentration)</td>
+                        </tr>
+                        <tr>
+                            <td>Average Household Size</td>
+                            <td>2.5 persons</td>
+                            <td>Likely smaller (more singles, couples)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Income Metrics (2021 Census)</h3>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">~$67K</span>
+                        <span class="stat-label">Hamilton Median HH Income</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">~$54K</span>
+                        <span class="stat-label">North Hamilton Median (Est.)</span>
+                    </div>
+                </div>
+
+                <h4>Income Distribution (Hamilton-Wide, 2021)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Income Band</th>
+                            <th>% of Households</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Under $20,000</td><td>14.8%</td></tr>
+                        <tr><td>$20,000&ndash;$39,999</td><td>23.1%</td></tr>
+                        <tr><td>$40,000&ndash;$59,999</td><td>19.6%</td></tr>
+                        <tr><td>$60,000&ndash;$79,999</td><td>15.4%</td></tr>
+                        <tr><td>$80,000+</td><td>27.1%</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Implication</div>
+                    <p>Rents must target &lt;$1,700 to align with the 30&ndash;35% affordability threshold for median North Hamilton income.</p>
+                </div>
+
+                <h3>Employment &amp; Occupation Mix</h3>
+                <h4>Hamilton CMA (2025)</h4>
+                <ul>
+                    <li><strong>Major sectors:</strong> Healthcare/Life Sciences (~70,000 workers), Manufacturing, Retail/Service, Education</li>
+                    <li><strong>Workforce diversity:</strong> 93% rating from Conference Board of Canada (diversified economy)</li>
+                </ul>
+
+                <h4>Downtown-Specific Employment</h4>
+                <ul>
+                    <li>Hospital jobs (St. Joseph's, other clinics) &mdash; major regional employer</li>
+                    <li>Retail/Hospitality (Jackson Square, James Street) &mdash; growing with revitalization</li>
+                    <li>Civic/Municipal government &mdash; City Hall presence</li>
+                    <li>Education spillover &mdash; McMaster staff/faculty in downtown research/admin roles</li>
+                    <li>Professional services &mdash; growing concentration (accounting, law, consulting)</li>
+                </ul>
+                <p><strong>Job-to-worker imbalance:</strong> About 30% of Hamilton workers commute to other municipalities (GTA, Niagara), suggesting many downtown residents work outside Hamilton &mdash; a strong GTA commuter profile.</p>
+
+                <h3>Student Presence</h3>
+                <ul>
+                    <li><strong>McMaster enrollment:</strong> 40,000+ students total</li>
+                    <li>Most first-year students live on campus (Westdale area)</li>
+                    <li>Upper-year and graduate students increasingly seek downtown / North Hamilton off-campus housing</li>
+                    <li>Average room rents: $800&ndash;$900; full 1-bed apartments: $1,700&ndash;$1,800+ placing pressure on student budgets</li>
+                </ul>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 3: HOUSING STOCK                    -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="housing-stock">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2>Housing Stock &amp; What People Live In</h2>
+                </div>
+
+                <h3>Dwelling Types in Downtown / North Hamilton</h3>
+
+                <h4>Historical Stock (Pre-1980)</h4>
+                <ul>
+                    <li>Victorian and early-1900s detached homes (many now converted to rental multi-units)</li>
+                    <li>Semi-detached and row housing (common throughout North Hamilton)</li>
+                    <li>Small apartment buildings (3&ndash;6 storey, converted commercial/residential mixed-use)</li>
+                </ul>
+
+                <h4>Contemporary Stock</h4>
+                <ul>
+                    <li>Aging detached &amp; semi-detached homes (primary rental inventory)</li>
+                    <li>Low-rise apartment buildings (purpose-built rental, 4&ndash;10 storey)</li>
+                    <li>Converted commercial (upper-floor residential above ground retail &mdash; common on James St North)</li>
+                    <li>Newer purpose-built rental apartments (recent additions, 2020+)</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-title">New Construction Pipeline</div>
+                    <p><strong>175 John Street North:</strong> Approved 12-storey mixed-use building (128 residential units) in early planning/development. Several downtown infill projects also active.</p>
+                </div>
+
+                <h3>Rental Market: Typical Sizes &amp; Pricing</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>Median Rent</th>
+                            <th>Typical Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Studio / Bachelor</td>
+                            <td>$1,125&ndash;$1,150</td>
+                            <td>350&ndash;450 sq ft</td>
+                        </tr>
+                        <tr>
+                            <td>1-Bedroom</td>
+                            <td>$1,650&ndash;$1,700</td>
+                            <td>500&ndash;650 sq ft</td>
+                        </tr>
+                        <tr>
+                            <td>2-Bedroom</td>
+                            <td>$1,950&ndash;$2,000</td>
+                            <td>750&ndash;950 sq ft</td>
+                        </tr>
+                        <tr>
+                            <td>3-Bedroom</td>
+                            <td>$2,500+</td>
+                            <td>1,000&ndash;1,400 sq ft</td>
+                        </tr>
+                        <tr>
+                            <td>Townhouse (Rental)</td>
+                            <td>$1,795&ndash;$2,795</td>
+                            <td>3 bed, newer/renovated; in-unit laundry common</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Age of Stock &amp; Renovation Activity</h3>
+                <p>Downtown / North Hamilton housing is predominantly <strong>50+ years old</strong>, built mainly 1920&ndash;1960s with some Victorian-era (1880&ndash;1910) properties.</p>
+                <ul>
+                    <li><strong>Active renovation:</strong> Properties undergoing cosmetic and functional upgrades (new kitchens, bathrooms, hardwood restoration)</li>
+                    <li><strong>Selective renovation:</strong> Some properties receive full modern renovations (in-unit laundry, A/C, open-concept); others remain basic</li>
+                    <li><strong>Market signal:</strong> Renovated units command a <strong>15&ndash;25% premium</strong> over basic stock; in-unit laundry is a major draw</li>
+                </ul>
+
+                <h3>Supply &amp; Demand Gaps</h3>
+                <div class="callout">
+                    <div class="callout-title">Observable Mismatches</div>
+                    <ul>
+                        <li><strong>Modern 2-bedroom units (800&ndash;900 sq ft) in $1,700&ndash;$1,900 range:</strong> Demand is strong, supply constrained</li>
+                        <li><strong>Family-sized units (3 bed, 2 bath) under $2,400:</strong> Families seeking downtown walkability face limited options</li>
+                        <li><strong>Affordable studios/bachelor units:</strong> Few sub-$1,200 options available</li>
+                        <li><strong>Parking-included units:</strong> Older stock rarely has assigned parking; newer buildings at premium pricing</li>
+                        <li><strong>In-unit laundry:</strong> High demand; constrained supply outside new/renovated buildings</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 4: FOR-SALE MARKET                  -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="for-sale">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2>For-Sale Market</h2>
+                </div>
+
+                <p>Hamilton market is currently <strong>buyer-favourable</strong>, with elevated inventory and moderating prices. December 2025 showed softer demand across most property types.</p>
+
+                <h3>Sale Price Ranges by Housing Type (Dec 2025)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Housing Type</th>
+                            <th>Average Price</th>
+                            <th>Median Price</th>
+                            <th>YoY Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Detached</td>
+                            <td>$729,000</td>
+                            <td>$779,000</td>
+                            <td>&ndash;14.7% to &ndash;5.9%</td>
+                        </tr>
+                        <tr>
+                            <td>Semi-Detached</td>
+                            <td>$649,209</td>
+                            <td>$655,000</td>
+                            <td>&ndash;9.8% to &ndash;5.8%</td>
+                        </tr>
+                        <tr>
+                            <td>Townhouse / Row</td>
+                            <td>$616,000&ndash;$677,501</td>
+                            <td>$655,000</td>
+                            <td>&ndash;5.8%</td>
+                        </tr>
+                        <tr>
+                            <td>Condo / Apartment</td>
+                            <td>$353,000&ndash;$455,014</td>
+                            <td>$446,000</td>
+                            <td>&ndash;26% to &ndash;9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Annual 2025 (Full Year) Benchmarks</h4>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">$718,708</span>
+                        <span class="stat-label">City Average (&ndash;5% YoY)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">$877,800</span>
+                        <span class="stat-label">Detached Benchmark (Q4)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">~$650K&ndash;$700K</span>
+                        <span class="stat-label">Semi-Detached Range</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">$446K&ndash;$454K</span>
+                        <span class="stat-label">Apartment / Condo</span>
+                    </div>
+                </div>
+
+                <h3>Days on Market &amp; Absorption</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value (Dec 2025)</th>
+                            <th>Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Average DOM</td>
+                            <td>54.2 days</td>
+                            <td>Down 11% YoY (selling faster despite inventory)</td>
+                        </tr>
+                        <tr>
+                            <td>Sales-to-New Listings Ratio</td>
+                            <td>77% (2025)</td>
+                            <td>Shifted from 39.4% in 2024; more buyer-friendly</td>
+                        </tr>
+                        <tr>
+                            <td>Months of Supply</td>
+                            <td>5.7 months</td>
+                            <td>Approaching buyer's market (&gt;6 = very soft)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Comparable Sales (Last 3&ndash;12 Months)</h3>
+                <p><em>Note: 418 John St N appears off-market. Below are representative comparables for Hamilton downtown/north-end properties.</em></p>
+
+                <h4>Profile A: Starter Home / First-Time Buyer (2&ndash;3 bed, semi-detached or townhouse)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Beds/Baths</th>
+                            <th>Size (est.)</th>
+                            <th>Sale Price</th>
+                            <th>DOM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hamilton semi-detached (typical)</td>
+                            <td>Semi</td>
+                            <td>3/1.5</td>
+                            <td>1,200 sf</td>
+                            <td>$649,209</td>
+                            <td>~49</td>
+                        </tr>
+                        <tr>
+                            <td>Hamilton townhouse (typical)</td>
+                            <td>Row</td>
+                            <td>3/1.5</td>
+                            <td>1,100 sf</td>
+                            <td>$677,501</td>
+                            <td>~52</td>
+                        </tr>
+                        <tr>
+                            <td>Centrally-located detached</td>
+                            <td>Detached</td>
+                            <td>3/2</td>
+                            <td>1,400 sf</td>
+                            <td>$760K&ndash;$820K</td>
+                            <td>~50&ndash;60</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Profile B: Family-Oriented (4 bed, 2+ bath, detached)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Beds/Baths</th>
+                            <th>Size (est.)</th>
+                            <th>Sale Price</th>
+                            <th>DOM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hamilton detached (city avg)</td>
+                            <td>Detached</td>
+                            <td>4/2</td>
+                            <td>1,800 sf</td>
+                            <td>$729K&ndash;$836K</td>
+                            <td>~49</td>
+                        </tr>
+                        <tr>
+                            <td>Detached with updates</td>
+                            <td>Detached</td>
+                            <td>4/2.5</td>
+                            <td>2,000 sf</td>
+                            <td>$800K&ndash;$900K</td>
+                            <td>~45&ndash;55</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Profile C: Small Infill / Townhouse (2 bed, modern)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Beds/Baths</th>
+                            <th>Size (est.)</th>
+                            <th>Sale Price</th>
+                            <th>DOM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hamilton row/townhouse (2024&ndash;2025)</td>
+                            <td>Row/Condo</td>
+                            <td>2/1.5</td>
+                            <td>900 sf</td>
+                            <td>$655,000</td>
+                            <td>~45</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Market Absorption Insight</div>
+                    <p>All property types are selling within 45&ndash;60 days at lower prices YoY. Detached homes remain most resilient; condos and apartments face the steepest pricing pressure (&ndash;26% YoY for condos is significant).</p>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 5: RENTAL MARKET                    -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="rental">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2>Rental Market</h2>
+                </div>
+
+                <h3>Rent Ranges by Unit Type (January 2026)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>Hamilton Median</th>
+                            <th>Range</th>
+                            <th>YoY Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Studio</td>
+                            <td>$1,125</td>
+                            <td>$1,000&ndash;$1,300</td>
+                            <td><span class="badge badge-charcoal">Down 5.86%</span></td>
+                        </tr>
+                        <tr>
+                            <td>1-Bedroom</td>
+                            <td>$1,648&ndash;$1,750</td>
+                            <td>$1,500&ndash;$1,900</td>
+                            <td><span class="badge badge-orange">Up 2&ndash;3%</span></td>
+                        </tr>
+                        <tr>
+                            <td>2-Bedroom</td>
+                            <td>$1,950&ndash;$2,000</td>
+                            <td>$1,600&ndash;$2,400</td>
+                            <td><span class="badge badge-orange">Up 1.6%</span></td>
+                        </tr>
+                        <tr>
+                            <td>3-Bedroom</td>
+                            <td>$2,500</td>
+                            <td>$2,200&ndash;$3,100</td>
+                            <td><span class="badge badge-charcoal">Stable</span></td>
+                        </tr>
+                        <tr>
+                            <td>Townhouse (3 bed)</td>
+                            <td>$2,000&ndash;$2,795</td>
+                            <td>$1,795&ndash;$2,950</td>
+                            <td><span class="badge badge-orange">Stable to +2%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Single-Family Rental (3+ bed)</td>
+                            <td>$2,500&ndash;$3,100</td>
+                            <td>$2,200&ndash;$3,200</td>
+                            <td><span class="badge badge-charcoal">Stable</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Vacancy Rate &amp; Trend</h3>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">3.6%</span>
+                        <span class="stat-label">Overall Vacancy (Fall 2024)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">2.8%</span>
+                        <span class="stat-label">1-Bed Vacancy (4th lowest ON)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">2.5%</span>
+                        <span class="stat-label">2-Bed Vacancy (4th lowest ON)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1.9%</span>
+                        <span class="stat-label">Downtown Core Vacancy</span>
+                    </div>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-title">Forecast (2025&ndash;2026)</div>
+                    <p>CMHC projects vacancy will continue to rise to 2.8% in 2025 and potentially higher in 2026 as new construction (including 128 units at 175 John St N, plus broader pipeline) completes. This suggests softening conditions ahead &mdash; more negotiating power for renters, slightly longer lease-up times for landlords.</p>
+                </div>
+
+                <h3>What Moves Fastest</h3>
+                <h4>Fastest-Moving Units</h4>
+                <ul>
+                    <li><strong>Modern 2-bed, $1,700&ndash;$1,900:</strong> Highest demand-to-supply ratio; young professionals, couples, small families</li>
+                    <li><strong>1-bed with in-unit laundry &amp; A/C, $1,500&ndash;$1,700:</strong> Strong takeup from young professionals and remote workers</li>
+                    <li><strong>Renovated 3-bed townhouse with parking, $2,000&ndash;$2,400:</strong> Families and roommate groups; lease-up ~15&ndash;30 days</li>
+                </ul>
+
+                <h4>Slowest-Moving Units</h4>
+                <ul>
+                    <li>Studio/bachelor (old, basic), &lt;$1,200: low appeal post-pandemic</li>
+                    <li>High-end 3-bed + loft-style penthouses, $2,800+: niche market; ~60+ days to lease</li>
+                    <li>Units without parking in downtown core: longer to fill</li>
+                </ul>
+
+                <h4>Seasonal Patterns</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Season</th>
+                            <th>Period</th>
+                            <th>Demand Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Peak</td>
+                            <td>May&ndash;September</td>
+                            <td>Student move-in, summer relocations; rents at peak, fast leasing</td>
+                        </tr>
+                        <tr>
+                            <td>Shoulder</td>
+                            <td>September, January&ndash;February</td>
+                            <td>Back-to-school, New Year moves; moderate demand</td>
+                        </tr>
+                        <tr>
+                            <td>Soft</td>
+                            <td>October&ndash;April (excl. Jan/Feb)</td>
+                            <td>Longer lease-up times; rent moderation offers appear</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Affordability Check: 30&ndash;35% Income Threshold</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Renter Profile</th>
+                            <th>Gross Annual Income</th>
+                            <th>30% Threshold</th>
+                            <th>35% Threshold</th>
+                            <th>Feasibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Single, entry-level (service)</td>
+                            <td>$32K&ndash;$40K</td>
+                            <td>$800&ndash;$1,000</td>
+                            <td>$933&ndash;$1,167</td>
+                            <td>Studio only; tight</td>
+                        </tr>
+                        <tr>
+                            <td>Young professional (1 income)</td>
+                            <td>$50K&ndash;$65K</td>
+                            <td>$1,250&ndash;$1,625</td>
+                            <td>$1,458&ndash;$1,896</td>
+                            <td>1-bed comfortable; tight at $1,700+</td>
+                        </tr>
+                        <tr>
+                            <td>Dual income, young couple</td>
+                            <td>$110K</td>
+                            <td>$2,750</td>
+                            <td>$3,208</td>
+                            <td>2-bed easily; 3-bed tight</td>
+                        </tr>
+                        <tr>
+                            <td>McMaster upper-year student</td>
+                            <td>~$6,240</td>
+                            <td>$156</td>
+                            <td>$182</td>
+                            <td>Cannot afford alone; needs roommate</td>
+                        </tr>
+                        <tr>
+                            <td>Health care worker (RN, LPN)</td>
+                            <td>$45K&ndash;$55K</td>
+                            <td>$1,125&ndash;$1,375</td>
+                            <td>$1,313&ndash;$1,604</td>
+                            <td>Tight 1-bed; studio easily</td>
+                        </tr>
+                        <tr>
+                            <td>GTA commuter (professional)</td>
+                            <td>$70K&ndash;$90K</td>
+                            <td>$1,750&ndash;$2,250</td>
+                            <td>$2,042&ndash;$2,625</td>
+                            <td>2-bed comfortably; some 3-bed</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout">
+                    <div class="callout-title">Key Affordability Insights</div>
+                    <ul>
+                        <li>Median 1-bed at $1,650 is just barely feasible for single income earners at ~$55k+ (30% threshold)</li>
+                        <li>2-beds at $1,950&ndash;$2,000 require dual income (~$80k+) or single income at $65k+</li>
+                        <li>3-beds at $2,500+ are out of reach for single renters; require couples or roommate groups</li>
+                        <li>Entry-level service workers and students cannot afford downtown solo</li>
+                        <li><strong>GTA commuters are a strong renter base</strong> &mdash; higher incomes easily support $1,700&ndash;$2,000 rents</li>
+                    </ul>
+                </div>
+
+                <h3>Rents per Square Foot</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>Size</th>
+                            <th>Monthly Rent</th>
+                            <th>$/sq ft/month</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Renovated efficiency/bachelor</td>
+                            <td>450&ndash;550 sf</td>
+                            <td>$1,100&ndash;$1,300</td>
+                            <td>$2.00&ndash;$2.36</td>
+                        </tr>
+                        <tr>
+                            <td>Standard 1-bed</td>
+                            <td>600&ndash;700 sf</td>
+                            <td>$1,500&ndash;$1,750</td>
+                            <td>$2.14&ndash;$2.92</td>
+                        </tr>
+                        <tr>
+                            <td>Modern 2-bed</td>
+                            <td>800&ndash;900 sf</td>
+                            <td>$1,700&ndash;$2,000</td>
+                            <td>$1.89&ndash;$2.50</td>
+                        </tr>
+                        <tr>
+                            <td>Newer 3-bed townhouse</td>
+                            <td>1,100 sf</td>
+                            <td>$2,200&ndash;$2,500</td>
+                            <td>$2.00&ndash;$2.27</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Features Correlating with Higher Rents</h3>
+                <h4>Positive Rent Premium (10&ndash;20%)</h4>
+                <ul>
+                    <li>In-unit laundry ($100&ndash;$200/mo premium)</li>
+                    <li>Air conditioning / climate control ($75&ndash;$150 premium)</li>
+                    <li>Assigned parking / garage ($100&ndash;$200 premium)</li>
+                    <li>Pet-friendly policy ($50&ndash;$100 premium)</li>
+                    <li>Renovated kitchen &amp; bathrooms (10&ndash;15% premium)</li>
+                    <li>Outdoor space &mdash; balcony, patio, yard ($75&ndash;$150 premium)</li>
+                    <li>Storage / walk-in closet ($50 premium)</li>
+                    <li>Bike parking/storage (10% premium for cycling-oriented renters)</li>
+                    <li>Building amenities &mdash; gym, lobby, concierge (5&ndash;10% premium)</li>
+                    <li>Walkability / proximity to transit and James Street (competitive advantage in lease-up speed)</li>
+                </ul>
+
+                <h4>Negative Correlation (Discount / Difficulty Leasing)</h4>
+                <ul>
+                    <li>No parking</li>
+                    <li>Outdated finishes (old flooring, fixtures)</li>
+                    <li>Lack of laundry (in-unit or on-site)</li>
+                    <li>High noise levels / poor soundproofing</li>
+                    <li>Limited natural light</li>
+                    <li>Small unit size for 2+ bedrooms</li>
+                </ul>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 6: COMPETITIVE SET & PIPELINE       -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="competitive">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2>Competitive Set &amp; Pipeline</h2>
+                </div>
+
+                <h3>Major New Builds / Recent Completions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Location</th>
+                            <th>Units</th>
+                            <th>Status</th>
+                            <th>Rent / Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>175 John St N</strong> (12-storey)</td>
+                            <td>Downtown, 3 blocks south</td>
+                            <td>128</td>
+                            <td>Approved, early development (est. 2027&ndash;2028)</td>
+                            <td>TBD, likely $1,800&ndash;$2,400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eastgate Square</strong></td>
+                            <td>Stoney Creek (~5 km SE)</td>
+                            <td>4,300+ planned</td>
+                            <td>Long-term pipeline</td>
+                            <td>Market-rate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>100 Main</strong></td>
+                            <td>Main Street, downtown</td>
+                            <td>~150 (est.)</td>
+                            <td>Currently leasing</td>
+                            <td>$1,799&ndash;$2,249 (promotional)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>InterRent Properties</strong></td>
+                            <td>Scattered downtown</td>
+                            <td>Multiple</td>
+                            <td>Actively leasing</td>
+                            <td>$1,600&ndash;$2,200</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Closest Competitor: 100 Main (Downtown Core)</h3>
+                <ul>
+                    <li><strong>Unit mix:</strong> 1-bed (710 sf, starting $1,799 promotional) and 2-bed units</li>
+                    <li><strong>Lease incentives:</strong> Promotional rents ($1,836/month for 2-bed for first 7 months) due to soft lease-up</li>
+                    <li><strong>Amenities:</strong> High-rise, views, balconies, in-building gym, modern finishes, near Jackson Square, 6-min walk to GO</li>
+                </ul>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Competitor Signal</div>
+                    <p>Even newer, high-amenity product is offering incentives, suggesting the downtown rental market is becoming less landlord-friendly (more choice for tenants). The 175 John St N project will also face lease-up challenges unless product/pricing is compelling.</p>
+                </div>
+
+                <h3>Product Features Observed as Working</h3>
+                <ul class="check-list">
+                    <li>In-unit laundry and A/C: standard expectation in newer product</li>
+                    <li>Parking (assigned or included): downtown product that includes parking leases faster</li>
+                    <li>Modern finishes: open-concept, stainless appliances, hardwood, renovated bathrooms</li>
+                    <li>High walkability / proximity to James Street and GO</li>
+                    <li>Downtown location with urban vibe: appeals to young professionals and GTA commuters</li>
+                    <li>Flexible lease terms: 12-month to month-to-month gaining popularity</li>
+                </ul>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 7: TARGET END-USER & PRODUCT FIT    -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="target-user">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <h2>Target End-User &amp; Product Fit</h2>
+                </div>
+
+                <h3>Renter Personas</h3>
+
+                <!-- Persona 1 -->
+                <div class="persona-card">
+                    <h4>Persona 1: Young Professional / GTA Commuter <span class="badge badge-orange">Primary Target</span></h4>
+                    <div class="persona-grid">
+                        <div>
+                            <h4>Profile</h4>
+                            <ul>
+                                <li><strong>Age:</strong> 25&ndash;40 years old</li>
+                                <li><strong>Household:</strong> Single or couples without children (1&ndash;2 person)</li>
+                                <li><strong>Income:</strong> $55K&ndash;$85K (single) or $100K&ndash;$140K (couple)</li>
+                                <li><strong>Employment:</strong> Professional roles (tech, healthcare, finance, education); GTA-based remote-first workers or local Hamilton professionals</li>
+                                <li><strong>Budget:</strong> $1,600&ndash;$2,000/month rent</li>
+                            </ul>
+
+                            <h4>Why They Choose This Area</h4>
+                            <ul class="check-list">
+                                <li>Affordable rent premium: $1,600&ndash;$1,900 vs. $2,000&ndash;$2,400 in Toronto</li>
+                                <li>Walkable urban lifestyle (James Street) without Toronto cost</li>
+                                <li>GO Transit access: 5 min walk, ~$12&ndash;16/trip to Union Station</li>
+                                <li>Emerging cool factor: downtown revitalization</li>
+                                <li>Proximity to St. Joseph's Hospital</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Preferred Unit</h4>
+                            <ul>
+                                <li>1-bed + den or 2-bed (home office for remote work)</li>
+                                <li>Modern finishes, in-unit laundry, A/C, assigned parking</li>
+                                <li>Walkable to James Street, close to GO</li>
+                            </ul>
+
+                            <h4>Must-Haves</h4>
+                            <ul>
+                                <li>High-speed internet (critical for remote work)</li>
+                                <li>Dedicated home office space</li>
+                                <li>In-unit laundry or in-building laundry</li>
+                                <li>Parking (assigned or street)</li>
+                            </ul>
+
+                            <h4>Deal-Breakers</h4>
+                            <ul>
+                                <li>Long commute to GO Centre (&gt;10 min walk)</li>
+                                <li>No laundry access</li>
+                                <li>Lack of natural light</li>
+                                <li>Noisy location</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Persona 2 -->
+                <div class="persona-card">
+                    <h4>Persona 2: McMaster Upper-Year Student / Student-Adjacent <span class="badge badge-charcoal">Secondary Target</span></h4>
+                    <div class="persona-grid">
+                        <div>
+                            <h4>Profile</h4>
+                            <ul>
+                                <li><strong>Age:</strong> 20&ndash;26 years old</li>
+                                <li><strong>Household:</strong> 2&ndash;4 person shared (roommates common)</li>
+                                <li><strong>Income (combined):</strong> $30K&ndash;$50K (mix of loans, part-time, parental support)</li>
+                                <li><strong>Employment:</strong> Part-time 10&ndash;20 hrs/week at $15&ndash;17/hr</li>
+                                <li><strong>Budget:</strong> $500&ndash;$750/person in shared 3&ndash;4 bed unit</li>
+                            </ul>
+
+                            <h4>Why They Choose This Area</h4>
+                            <ul class="check-list">
+                                <li>Downtown location with urban independence</li>
+                                <li>Walkability to restaurants, bars, social scenes</li>
+                                <li>Access to public transit (HSR, GO)</li>
+                                <li>Shared housing brings rent to $500&ndash;$650/person</li>
+                                <li>"Arrival city" feel appeals to international students</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Preferred Unit</h4>
+                            <ul>
+                                <li>3-bed house shared with 2&ndash;3 roommates</li>
+                                <li>2-bed apartment shared with 1 roommate</li>
+                                <li>Rough finishes acceptable (budget-conscious)</li>
+                                <li>In-unit or accessible laundry critical</li>
+                            </ul>
+
+                            <h4>Must-Haves</h4>
+                            <ul>
+                                <li>Affordable total rent ($1,700&ndash;$1,900 for 3 bed)</li>
+                                <li>Laundry on-site</li>
+                                <li>Close to HSR or transit</li>
+                                <li>Flexible lease (12-month or month-to-month)</li>
+                                <li>Landlord comfortable with multiple tenants</li>
+                            </ul>
+
+                            <h4>Deal-Breakers</h4>
+                            <ul>
+                                <li>Upfront deposit demands beyond first/last</li>
+                                <li>Restrictive noise policies</li>
+                                <li>Landlord unwilling to rent to students</li>
+                                <li>Individual income qualification requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- For-Sale Persona -->
+                <div class="persona-card">
+                    <h4>For-Sale Buyer: Young Family / First-Time Buyer</h4>
+                    <div class="persona-grid">
+                        <div>
+                            <h4>Profile</h4>
+                            <ul>
+                                <li><strong>Age:</strong> 30&ndash;45 years old</li>
+                                <li><strong>Household:</strong> Married/partnered with 1&ndash;2 young children</li>
+                                <li><strong>Income:</strong> $80K&ndash;$120K gross (dual income)</li>
+                                <li><strong>Mortgage capacity:</strong> $400K&ndash;$550K (assuming 20% down on $500K&ndash;$700K)</li>
+                                <li><strong>Budget:</strong> $700,000&ndash;$900,000</li>
+                            </ul>
+
+                            <h4>Why They Buy Here</h4>
+                            <ul class="check-list">
+                                <li>4-bed detached at ~$760K&ndash;$850K vs. $1.2M+ in GTA</li>
+                                <li>Family-oriented: 4-bed, 2-bath suits small family</li>
+                                <li>Walkable to parks, schools, libraries</li>
+                                <li>GO access if one spouse works in GTA</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Preferred Property</h4>
+                            <ul>
+                                <li>3&ndash;4 bed, 1.5&ndash;2.5 bath detached</li>
+                                <li>1,400&ndash;1,800 sq ft</li>
+                                <li>Lot size: 40 ft x 120 ft+ (typical downtown lot)</li>
+                                <li>Some updates/renovations preferred (move-in ready)</li>
+                            </ul>
+
+                            <h4>Must-Haves</h4>
+                            <ul>
+                                <li>At least 2 bathrooms</li>
+                                <li>Off-street parking / driveway</li>
+                                <li>School proximity</li>
+                                <li>Safe neighbourhood</li>
+                            </ul>
+
+                            <h4>Deal-Breakers</h4>
+                            <ul>
+                                <li>Significant structural issues or deferred maintenance</li>
+                                <li>Flood/water history</li>
+                                <li>Limited parking</li>
+                                <li>Industrial zoning on street</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Recommended Rental Unit Mix (Demand-Based)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>% of Mix</th>
+                            <th>Rationale</th>
+                            <th>Est. Rent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-bed + den (600&ndash;700 sf)</td>
+                            <td><strong>45%</strong></td>
+                            <td>Strongest demand-to-supply ratio; young professionals, remote workers</td>
+                            <td>$1,650&ndash;$1,850</td>
+                        </tr>
+                        <tr>
+                            <td>2-bed (850&ndash;950 sf)</td>
+                            <td><strong>35%</strong></td>
+                            <td>Couples, small families, shared professionals; tight mid-market supply</td>
+                            <td>$1,900&ndash;$2,150</td>
+                        </tr>
+                        <tr>
+                            <td>3-bed townhouse (1,100+ sf)</td>
+                            <td><strong>15%</strong></td>
+                            <td>Family units, roommate groups; lease diversity</td>
+                            <td>$2,200&ndash;$2,600</td>
+                        </tr>
+                        <tr>
+                            <td>Studio/bachelor (450 sf)</td>
+                            <td><strong>5%</strong></td>
+                            <td>Token offering; useful for entry-level market</td>
+                            <td>$1,100&ndash;$1,300</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Key Tenant Features to Prioritize</h4>
+                <ul class="check-list">
+                    <li>In-unit laundry (drives leasing speed by 20&ndash;30%)</li>
+                    <li>Assigned parking or on-site parking (~$100&ndash;$150/mo premium value)</li>
+                    <li>Modern finishes (expected standard; saves on management complaints)</li>
+                    <li>Open-concept living (appeals to work-from-home demographic)</li>
+                    <li>Balcony/outdoor space (5&ndash;10% premium)</li>
+                    <li>Building amenities &mdash; gym, lounge (optional but differentiating)</li>
+                </ul>
+
+                <h4>Lease-Up Timeline Expectation (January 2026 Conditions)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>Expected Lease-Up</th>
+                            <th>Demand Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-bed + den</td>
+                            <td>20&ndash;35 days</td>
+                            <td>Highest demand</td>
+                        </tr>
+                        <tr>
+                            <td>2-bed</td>
+                            <td>25&ndash;45 days</td>
+                            <td>Strong, slight seasonal variation</td>
+                        </tr>
+                        <tr>
+                            <td>3-bed</td>
+                            <td>45&ndash;75 days</td>
+                            <td>Niche, slower</td>
+                        </tr>
+                        <tr>
+                            <td>Studio</td>
+                            <td>60&ndash;90 days</td>
+                            <td>Weaker demand</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>For-Sale Product Positioning</h3>
+                <div class="callout">
+                    <div class="callout-title">If Retained / Sold</div>
+                    <ul>
+                        <li><strong>Product:</strong> 4-bed, 2.5-bath, 2,100+ sf detached, updated finishes</li>
+                        <li><strong>Target buyer:</strong> First-time buyers (young families), GTA commuters, downsizers</li>
+                        <li><strong>Comparable pricing:</strong> $780,000&ndash;$850,000</li>
+                        <li><strong>Differentiation:</strong> Walkable to James Street, close to GO, near St. Joseph's Hospital</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 8: SOURCES APPENDIX                 -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="sources">
+                <div class="section-header">
+                    <span class="section-number">08</span>
+                    <h2>Sources Appendix</h2>
+                </div>
+
+                <p class="source-category">Sales &amp; Pricing</p>
+                <ul class="sources-list">
+                    <li>Voortman Realty (2026-01-15): "2026 Hamilton Area Market Outlook" &mdash; <a href="https://voortmanrealty.com/2026-hamilton-area-market-outlook/" target="_blank" rel="noopener">voortmanrealty.com</a></li>
+                    <li>Ana Bastas Realty (2026-01-05): "January 2026 Real Estate Outlook" &mdash; <a href="https://www.anabastas.ca/blog/January-2026-Hamilton-Real-Estate-Outlook---What-Buyers---Sellers-Can-Expect-This-Year" target="_blank" rel="noopener">anabastas.ca</a></li>
+                    <li>Judy Mar Sales (2026-01-13): "Hamilton Real Estate Market Statistics for December 2025" &mdash; <a href="https://judymarsales.com/news/blog/hamilton-real-estate-market-statistics-for-december-2025.aspx" target="_blank" rel="noopener">judymarsales.com</a></li>
+                    <li>Wowa.ca (2026-01-13): "Hamilton Housing Market Report: Jan. 13th, 2026 Update" &mdash; <a href="https://wowa.ca/hamilton-housing-market" target="_blank" rel="noopener">wowa.ca</a></li>
+                    <li>Nesto (2026-01-16): "Hamilton Housing Market | 2026 Home Prices" &mdash; <a href="https://www.nesto.ca/home-buying/hamilton-housing-market-outlook/" target="_blank" rel="noopener">nesto.ca</a></li>
+                    <li>RE/MAX (2026-01-05): "Hamilton-Burlington Housing Market Outlook (2026)" &mdash; <a href="https://blog.remax.ca/hamilton-housing-market-outlook/" target="_blank" rel="noopener">blog.remax.ca</a></li>
+                    <li>Emily Jones Real Estate (2025-02-13): "January 2025 GTA &amp; Hamilton Real Estate" &mdash; <a href="https://emilyjonesrealestate.ca/real-estate-market-january-2025/" target="_blank" rel="noopener">emilyjonesrealestate.ca</a></li>
+                    <li>Royal LePage (2025-02-28): "Housing Price Report: Hamilton Q3 2025" &mdash; <a href="https://www.royallepage.ca/en/realestate/info-and-advice/market-reports-and-surveys/housing-price-report-hamilton-market-report-q3-2025" target="_blank" rel="noopener">royallepage.ca</a></li>
+                    <li>CREA Statistics (2025-12-31): "Hamilton and Burlington Median Price" &mdash; <a href="https://creastats.crea.ca/mls/hami-median-price/" target="_blank" rel="noopener">creastats.crea.ca</a></li>
+                    <li>RAHB (2025-06-04): "Market Stats" &mdash; <a href="https://www.rahb.ca/market-stats/" target="_blank" rel="noopener">rahb.ca</a></li>
+                    <li>Hamilton Listing.ca (2024-12-31): "Hamilton Detached Home Price History" &mdash; <a href="https://hamilton.listing.ca/detached-home-price-history.htm" target="_blank" rel="noopener">hamilton.listing.ca</a></li>
+                </ul>
+
+                <p class="source-category">Rents &amp; Vacancy</p>
+                <ul class="sources-list">
+                    <li>CMHC Rental Market Update (March 2025): "Hamilton CMA" &mdash; <a href="https://www.cornerstone.inc/wp-content/uploads/sites/12/2025/03/CMHC-Rental-Market-Update-Hamilton-CMA.pdf" target="_blank" rel="noopener">cornerstone.inc</a></li>
+                    <li>Hamilton Independent (2024-03-11): "Rent supply 'vastly insufficient'" &mdash; <a href="https://hamiltonindependent.ca/rent-supply-vastly-insufficient-canada-mortgage-and-housing-corporation/" target="_blank" rel="noopener">hamiltonindependent.ca</a></li>
+                    <li>Lease24 (2026-01-18): "Ontario rental market trends for landlords in 2026" &mdash; <a href="https://lease24.io/blog/ontario-rental-market-trends-2026" target="_blank" rel="noopener">lease24.io</a></li>
+                    <li>PadMapper (2026-01-25): "Hamilton ON Apartments for Rent" &mdash; <a href="https://www.padmapper.com/apartments/hamilton-on" target="_blank" rel="noopener">padmapper.com</a></li>
+                    <li>Zumper (2026-01-28): "Apartments for Rent in Hamilton, ON" &mdash; <a href="https://www.zumper.com/apartments-for-rent/hamilton-on" target="_blank" rel="noopener">zumper.com</a></li>
+                    <li>Zumper Rentals (2025-05-10): "Houses for Rent in Central Hamilton" &mdash; <a href="https://www.zumperrentals.com/houses-for-rent/hamilton-on/central-hamilton" target="_blank" rel="noopener">zumperrentals.com</a></li>
+                    <li>InterRent (2023-11-21): "100 Main - Hamilton Downtown" &mdash; <a href="https://www.irent.com/communities/100-main" target="_blank" rel="noopener">irent.com</a></li>
+                    <li>liv.rent (2025-05-20): "Off-Campus Housing For McMaster Students" &mdash; <a href="https://liv.rent/blog/neighbourhoods/best-off-campus-housing-for-mcmaster-university-students/" target="_blank" rel="noopener">liv.rent</a></li>
+                </ul>
+
+                <p class="source-category">Demographics</p>
+                <ul class="sources-list">
+                    <li>Statistics Canada (2022-02-08): "2021 Census Profile &mdash; Hamilton, City" &mdash; <a href="https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/page.cfm?Lang=E&GENDERlist=1&STATISTIClist=1&HEADERlist=0" target="_blank" rel="noopener">statcan.gc.ca</a></li>
+                    <li>City of Hamilton (2024-02-27): "Hamilton Census Data Maps (2021)" &mdash; <a href="https://www.hamilton.ca/city-council/data-maps/hamilton-census-data-maps" target="_blank" rel="noopener">hamilton.ca</a></li>
+                    <li>SPRC Hamilton (2024-05-20): "Profile of North Hamilton" &mdash; <a href="https://sprchamilton.ca/wp-content/uploads/2024/05/Profile-of-North-Hamilton-FINAL.pdf" target="_blank" rel="noopener">sprchamilton.ca</a></li>
+                    <li>Invest in Hamilton (2026-01-21): "Insights &amp; Data &mdash; Employment by Sector" &mdash; <a href="https://investinhamilton.ca/insights-data" target="_blank" rel="noopener">investinhamilton.ca</a></li>
+                    <li>Hamilton Community Foundation (2015): "Vital Signs 2015: Geography of Jobs" &mdash; <a href="https://www.hamiltoncommunityfoundation.ca/vital-signs-2015/geography-of-jobs-in-hamilton-2015/" target="_blank" rel="noopener">hamiltoncommunityfoundation.ca</a></li>
+                </ul>
+
+                <p class="source-category">Amenities &amp; Attractions</p>
+                <ul class="sources-list">
+                    <li>Tourism Hamilton (2025-12-03): "Guide to Downtown Hamilton" &mdash; <a href="https://tourismhamilton.com/downtown-guide/" target="_blank" rel="noopener">tourismhamilton.com</a></li>
+                    <li>Downtown Hamilton (2025-09-18): "New Businesses in Downtown Hamilton" &mdash; <a href="https://downtownhamilton.org/new-businesses-in-downtown-hamilton/" target="_blank" rel="noopener">downtownhamilton.org</a></li>
+                    <li>Tourism Hamilton (2026-01-08): "What's New in Hamilton in 2026" &mdash; <a href="https://tourismhamilton.com/new-in-hamilton/" target="_blank" rel="noopener">tourismhamilton.com</a></li>
+                </ul>
+
+                <p class="source-category">Transit &amp; Commuting</p>
+                <ul class="sources-list">
+                    <li>Wikipedia: "Hamilton GO Centre" &mdash; <a href="https://en.wikipedia.org/wiki/Hamilton_GO_Centre" target="_blank" rel="noopener">wikipedia.org</a></li>
+                    <li>Rome2rio: "Hamilton GO Centre to Downtown Toronto" &mdash; <a href="https://www.rome2rio.com/s/Hamilton-GO-Centre/Downtown-Toronto" target="_blank" rel="noopener">rome2rio.com</a></li>
+                </ul>
+
+                <p class="source-category">New Construction &amp; Pipeline</p>
+                <ul class="sources-list">
+                    <li>Instagram (2025-11-30): "New 12-storey building at 175 John St N" &mdash; <a href="https://www.instagram.com/reel/DQwXa3-Dt-k/?hl=en" target="_blank" rel="noopener">instagram.com</a></li>
+                    <li>YouTube (2025-09-26): "Everything New Coming to Hamilton" &mdash; <a href="https://www.youtube.com/watch?v=PXjAGAHz4aU" target="_blank" rel="noopener">youtube.com</a></li>
+                </ul>
+
+                <p class="source-category">General Research</p>
+                <ul class="sources-list">
+                    <li>Cornerstone Association of REALTORS (2025-12-24): "Hamilton Monthly Statistical Report &mdash; December 2025" &mdash; <a href="https://cornerstone.inc/app/uploads/2026/01/Cornerstone-Hamilton-Houing-Stats-December-2025.pdf" target="_blank" rel="noopener">cornerstone.inc</a></li>
+                </ul>
+            </section>
+
+            <!-- ════════════════════════════════════════════ -->
+            <!-- SECTION 9: FINAL SUMMARY                    -->
+            <!-- ════════════════════════════════════════════ -->
+            <section id="summary">
+                <div class="section-header">
+                    <span class="section-number">09</span>
+                    <h2>Final Summary &amp; Market Opportunity</h2>
+                </div>
+
+                <div class="summary-box">
+                    <h3>Three Market Drivers at 418 John Street North</h3>
+
+                    <div class="summary-driver">
+                        <div class="driver-card">
+                            <h4>Downtown Revitalization</h4>
+                            <p>James Street North is actively becoming the city's food/culture destination. Property is 1 block east, benefiting from walkable spillover.</p>
+                        </div>
+                        <div class="driver-card">
+                            <h4>GTA Commute-Arbitrage</h4>
+                            <p>Hamilton GO Centre is &lt;500 m away. Young professionals can afford downtown walkability + GO access at 1/3 the Toronto cost.</p>
+                        </div>
+                        <div class="driver-card">
+                            <h4>Tight 1&ndash;2 Bed Rental Market</h4>
+                            <p>Current vacancy is 2.8% (1-bed) to 2.5% (2-bed). Strong demand-to-supply imbalance for modern $1,650&ndash;$2,000 units with in-unit laundry and parking.</p>
+                        </div>
+                    </div>
+
+                    <h3>Rental Product Opportunity</h3>
+                    <ul>
+                        <li><strong>Unit mix:</strong> Heavy 1-bed + den (45%) and 2-bed (35%) focus; minimal studios</li>
+                        <li><strong>Target:</strong> Young professionals and GTA commuters, ages 25&ndash;40</li>
+                        <li><strong>Lease-up:</strong> 1&ndash;2 beds should fill within 25&ndash;45 days at $1,650&ndash;$2,000/month</li>
+                        <li><strong>Risk:</strong> Broader pipeline (175 John St N, InterRent at 100 Main) will soften market starting late 2026&ndash;2027; act early on supply before it arrives</li>
+                    </ul>
+
+                    <h3>For-Sale Product Opportunity</h3>
+                    <ul>
+                        <li><strong>Product:</strong> Detached family home; target young families (ages 30&ndash;45, dual income ~$100k+)</li>
+                        <li><strong>Pricing:</strong> $780k&ndash;$850k competitive for updated downtown-accessible detached</li>
+                        <li><strong>Buyer profile:</strong> First-time owners, GTA commuters, downsizers attracted to walkability and GO access</li>
+                    </ul>
+                </div>
+
+                <h3>Critical Next Steps</h3>
+                <ol>
+                    <li>Verify property condition and true spec (bed, bath, sf) from professional inspection</li>
+                    <li>Model rental vs. for-sale scenarios with accurate cost basis</li>
+                    <li>Benchmark lease-up comps locally (100 Main, other downtown buildings) to understand actual timeline</li>
+                    <li>Monitor 175 John St N development timeline (supply pressure beginning 2027)</li>
+                    <li>Consider mixed-use strategies (e.g., ground-floor retail + residential upstairs) if zoning permits, to diversify income</li>
+                </ol>
+            </section>
+
+        </div><!-- /content -->
+
+        <!-- ═══ FOOTER ═══ -->
+        <footer>
+            <p>Team Shane &mdash; Due Diligence &amp; Feasibility Study &mdash; 418 John Street North, Hamilton, Ontario &mdash; January 2026</p>
+            <p>This document is prepared for internal use only. Market data is directional and should be verified independently.</p>
+        </footer>
+
+    </div><!-- /container -->
+</body>
+</html>
