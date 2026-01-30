@@ -600,6 +600,48 @@
             }
         }
 
+        /* ── Nav Tabs ── */
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-beige);
+        }
+
+        .nav-tabs a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-right: 1px solid var(--color-border);
+            transition: background 0.2s, color 0.2s;
+            text-align: center;
+        }
+
+        .nav-tabs a:last-child {
+            border-right: none;
+        }
+
+        .nav-tabs a:hover {
+            background: var(--color-orange-light);
+            color: var(--color-orange);
+        }
+
+        .nav-tabs a.active {
+            background: var(--color-white);
+            color: var(--color-orange);
+            font-weight: 600;
+            border-bottom: 3px solid var(--color-orange);
+            margin-bottom: -1px;
+        }
+
         /* ── Footer ── */
         footer {
             background: var(--color-charcoal);
@@ -629,6 +671,27 @@
             header, .metadata, .toc, .content, .disclaimer, footer {
                 padding-left: 24px;
                 padding-right: 24px;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs a {
+                border-right: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: var(--spacing-sm) 24px;
+                font-size: 0.82rem;
+            }
+
+            .nav-tabs a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-tabs a.active {
+                border-bottom: 1px solid var(--color-border);
+                border-left: 3px solid var(--color-orange);
+                margin-bottom: 0;
             }
 
             header h1 {
@@ -689,8 +752,12 @@
             </div>
         </header>
 
-        <!-- ═══ HERO BANNER ═══ -->
-        <img class="hero-banner" src="./images/hero-streetscape.jpg" alt="Downtown urban streetscape at dusk">
+        <!-- ═══ NAV TABS ═══ -->
+        <nav class="nav-tabs">
+            <a href="./index.html" class="active">Market Research</a>
+            <a href="./zoning-entitlement.html">Zoning &amp; Entitlement (Phase 1)</a>
+            <a href="./due-diligence-checklist.html">Due Diligence Checklist (Phase 2)</a>
+        </nav>
 
         <!-- ═══ METADATA ═══ -->
         <div class="metadata">
@@ -756,6 +823,14 @@
                 <div class="toc-item">
                     <span class="toc-number">09</span>
                     <a href="#summary">Final Summary &amp; Market Opportunity</a>
+                </div>
+                <div class="toc-item" style="grid-column: 1 / -1; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-border);">
+                    <span class="toc-number" style="color: var(--color-charcoal);">&rarr;</span>
+                    <a href="./zoning-entitlement.html" style="font-weight: 600;">Zoning &amp; Entitlement Analysis (Phase 1)</a>
+                </div>
+                <div class="toc-item" style="grid-column: 1 / -1;">
+                    <span class="toc-number" style="color: var(--color-charcoal);">&rarr;</span>
+                    <a href="./due-diligence-checklist.html" style="font-weight: 600;">Due Diligence Checklist (Phase 2)</a>
                 </div>
             </div>
         </nav>
@@ -2097,6 +2172,12 @@
                     <li>Monitor 175 John St N development timeline (supply pressure beginning 2027)</li>
                     <li>Consider mixed-use strategies (e.g., ground-floor retail + residential upstairs) if zoning permits, to diversify income</li>
                 </ol>
+
+                <div class="callout" style="margin-top: 2rem;">
+                    <div class="callout-title">Companion Reports</div>
+                    <p>A detailed <strong><a href="./zoning-entitlement.html" style="color: var(--color-orange);">Zoning &amp; Entitlement Analysis (Phase 1)</a></strong> covers the "D" District vs "R1a" zoning scenarios, maximum unit counts (2 units by-right under D, 4 units by-right under R1a, 6&ndash;8 approval-dependent), Secondary Plan policy context, massing envelope, parking, gating risks, and Phase 2 confirmation items.</p>
+                    <p>A <strong><a href="./due-diligence-checklist.html" style="color: var(--color-orange);">Phase 2 Due Diligence Checklist</a></strong> provides the full confirmation workflow: deal-killers first (title, survey, environmental), then entitlement, parking/access/fire, built form envelope tests, approvals precedent, overlays, and a data room index.</p>
+                </div>
             </section>
 
         </div><!-- /content -->

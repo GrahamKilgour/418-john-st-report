@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>418 John Street North - Zoning &amp; Entitlement Analysis (Phase 1)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-orange: #FF7A3D;
+            --color-orange-light: rgba(255, 122, 61, 0.08);
+            --color-orange-mid: rgba(255, 122, 61, 0.15);
+            --color-charcoal: #3F3A37;
+            --color-beige: #EFE9E5;
+            --color-white: #FFFFFF;
+            --color-text: #1F1F1F;
+            --color-text-light: #5a5550;
+            --color-border: #e0dbd6;
+            --font-headline: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --radius: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-beige);
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border-radius: var(--radius);
+            box-shadow: 0 1px 4px rgba(63, 58, 55, 0.08);
+            overflow: hidden;
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 48px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-orange);
+        }
+
+        .header-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        header h1 {
+            font-family: var(--font-headline);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        /* ── Nav Tabs ── */
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-beige);
+        }
+
+        .nav-tabs a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-right: 1px solid var(--color-border);
+            transition: background 0.2s, color 0.2s;
+            text-align: center;
+        }
+
+        .nav-tabs a:last-child {
+            border-right: none;
+        }
+
+        .nav-tabs a:hover {
+            background: var(--color-orange-light);
+            color: var(--color-orange);
+        }
+
+        .nav-tabs a.active {
+            background: var(--color-white);
+            color: var(--color-orange);
+            font-weight: 600;
+            border-bottom: 3px solid var(--color-orange);
+            margin-bottom: -1px;
+        }
+
+        /* ── Metadata Bar ── */
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg) 48px;
+            background: var(--color-beige);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .metadata-item {
+            padding: var(--spacing-md);
+            background: var(--color-white);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--color-orange);
+        }
+
+        .metadata-item label {
+            font-weight: 600;
+            color: var(--color-text-light);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .metadata-item span {
+            display: block;
+            color: var(--color-text);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* ── Disclaimer ── */
+        .disclaimer {
+            padding: var(--spacing-md) 48px;
+            background: var(--color-orange-light);
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        /* ── Table of Contents ── */
+        .toc {
+            padding: var(--spacing-xl) 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .toc h2 {
+            font-family: var(--font-headline);
+            font-size: 1.4rem;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-orange);
+            display: inline-block;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-sm);
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-sm);
+        }
+
+        .toc-number {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            color: var(--color-orange);
+            font-size: 1rem;
+            min-width: 28px;
+        }
+
+        .toc-item a {
+            color: var(--color-charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .toc-item a:hover {
+            color: var(--color-orange);
+        }
+
+        /* ── Content Area ── */
+        .content {
+            padding: var(--spacing-2xl) 48px;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--color-charcoal);
+        }
+
+        .section-number {
+            font-family: var(--font-headline);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-orange);
+        }
+
+        .section-header h2 {
+            font-family: var(--font-headline);
+            color: var(--color-charcoal);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        h3 {
+            font-family: var(--font-headline);
+            color: var(--color-charcoal);
+            font-size: 1.15rem;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        h4 {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.75;
+        }
+
+        /* ── Callout Boxes ── */
+        .callout {
+            background: var(--color-beige);
+            border-left: 4px solid var(--color-orange);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-charcoal {
+            background: rgba(63, 58, 55, 0.04);
+            border-left-color: var(--color-charcoal);
+        }
+
+        .callout-charcoal .callout-title {
+            color: var(--color-charcoal);
+        }
+
+        .callout-confirm {
+            background: rgba(46, 125, 50, 0.06);
+            border-left-color: #2e7d32;
+        }
+
+        .callout-confirm .callout-title {
+            color: #2e7d32;
+        }
+
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            font-size: 0.85rem;
+        }
+
+        thead th {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        thead th:first-child {
+            border-radius: var(--radius) 0 0 0;
+        }
+
+        thead th:last-child {
+            border-radius: 0 var(--radius) 0 0;
+        }
+
+        td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(239, 233, 229, 0.3);
+        }
+
+        tr:hover {
+            background-color: var(--color-orange-light);
+        }
+
+        /* ── Lists ── */
+        ul, ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.7;
+        }
+
+        li::marker {
+            color: var(--color-orange);
+        }
+
+        /* ── Check list ── */
+        .check-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .check-list li {
+            padding-left: var(--spacing-lg);
+            position: relative;
+        }
+
+        .check-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--color-orange);
+            font-weight: 700;
+        }
+
+        /* ── Confirm list (items still needing verification) ── */
+        .confirm-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .confirm-list li {
+            padding-left: var(--spacing-lg);
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .confirm-list li::before {
+            content: '\25CB';
+            position: absolute;
+            left: 0;
+            color: var(--color-orange);
+            font-weight: 700;
+        }
+
+        /* ── Badges ── */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-orange {
+            background: var(--color-orange-mid);
+            color: #c25a20;
+        }
+
+        .badge-charcoal {
+            background: rgba(63, 58, 55, 0.1);
+            color: var(--color-charcoal);
+        }
+
+        .badge-green {
+            background: rgba(46, 125, 50, 0.1);
+            color: #2e7d32;
+        }
+
+        .badge-red {
+            background: rgba(198, 40, 40, 0.1);
+            color: #c62828;
+        }
+
+        /* ── Stat Cards ── */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--color-beige);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .stat-card .stat-value {
+            font-family: var(--font-headline);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-orange);
+            display: block;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.78rem;
+            color: var(--color-text-light);
+            margin-top: 4px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Scenario Comparison ── */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .scenario-card {
+            border-radius: var(--radius);
+            padding: var(--spacing-xl);
+            border-top: 4px solid var(--color-orange);
+        }
+
+        .scenario-card.scenario-a {
+            background: var(--color-beige);
+            border-top-color: var(--color-charcoal);
+        }
+
+        .scenario-card.scenario-b {
+            background: var(--color-orange-light);
+            border-top-color: var(--color-orange);
+        }
+
+        .scenario-card h4 {
+            font-family: var(--font-headline);
+            font-size: 1.05rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .scenario-card .scenario-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .scenario-card .scenario-units {
+            font-family: var(--font-headline);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--color-orange);
+            display: block;
+            margin: var(--spacing-md) 0;
+        }
+
+        .scenario-card p {
+            font-size: 0.88rem;
+        }
+
+        /* ── Summary Box ── */
+        .summary-box {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            border-radius: var(--radius);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .summary-box h3 {
+            color: var(--color-orange);
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+
+        .summary-box p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .summary-box ul {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .summary-box li::marker {
+            color: var(--color-orange);
+        }
+
+        .summary-driver {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .driver-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            border-left: 3px solid var(--color-orange);
+        }
+
+        .driver-card h4 {
+            color: var(--color-orange);
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .driver-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+        }
+
+        /* ── Decision Matrix ── */
+        .decision-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2px;
+            background: var(--color-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .matrix-header {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .matrix-cell {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .matrix-cell.highlight {
+            background: var(--color-orange-light);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--color-charcoal);
+            color: rgba(255, 255, 255, 0.5);
+            padding: var(--spacing-xl) 48px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        .footer-logo {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+
+            header, .metadata, .toc, .content, .disclaimer, footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs a {
+                border-right: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: var(--spacing-sm) 24px;
+                font-size: 0.82rem;
+            }
+
+            .nav-tabs a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-tabs a.active {
+                border-bottom: 1px solid var(--color-border);
+                border-left: 3px solid var(--color-orange);
+                margin-bottom: 0;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .summary-driver {
+                grid-template-columns: 1fr;
+            }
+
+            .decision-matrix {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .toc-item a {
+                color: var(--color-text);
+            }
+
+            .nav-tabs {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ═══ HEADER ═══ -->
+        <header>
+            <div class="header-logo">
+                <img src="./Shane_Logo.png" alt="Team Shane Logo">
+            </div>
+            <div class="header-text">
+                <div class="header-eyebrow">Team Shane | Zoning &amp; Entitlement Analysis</div>
+                <h1>418 John Street North</h1>
+                <div class="header-subtitle">Phase 1 &mdash; Maximum Unit Count &amp; Highest-and-Best-Use Analysis</div>
+            </div>
+        </header>
+
+        <!-- ═══ NAV TABS ═══ -->
+        <nav class="nav-tabs">
+            <a href="./index.html">Market Research</a>
+            <a href="./zoning-entitlement.html" class="active">Zoning &amp; Entitlement (Phase 1)</a>
+            <a href="./due-diligence-checklist.html">Due Diligence Checklist (Phase 2)</a>
+        </nav>
+
+        <!-- ═══ METADATA ═══ -->
+        <div class="metadata">
+            <div class="metadata-item">
+                <label>Report Date</label>
+                <span>January 29, 2026</span>
+            </div>
+            <div class="metadata-item">
+                <label>Current Zoning</label>
+                <span>"D" District &mdash; By-law 6593 (Former Hamilton)</span>
+            </div>
+            <div class="metadata-item">
+                <label>Comparison Zone</label>
+                <span>"R1a" &mdash; By-law 05-200 (City of Hamilton)</span>
+            </div>
+            <div class="metadata-item">
+                <label>Phase</label>
+                <span>Phase 1 &mdash; Scope &amp; Standard (Policy + Zoning Review)</span>
+            </div>
+        </div>
+
+        <!-- ═══ DISCLAIMER ═══ -->
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This analysis is a preliminary review of zoning and planning policy documents for discussion purposes only. It is not a legal opinion and does not constitute planning advice. All figures, interpretations, and conclusions are subject to confirmation in Phase 2 against survey, title, environmental, and City staff verification. Values flagged "TO CONFIRM" must be validated before reliance.
+        </div>
+
+        <!-- ═══ TABLE OF CONTENTS ═══ -->
+        <nav class="toc">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <div class="toc-item">
+                    <span class="toc-number">01</span>
+                    <a href="#scope">Scope &amp; Decision Frame</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">02</span>
+                    <a href="#property">Property Facts</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">03</span>
+                    <a href="#policy">Secondary Plan &amp; Policy Context</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">04</span>
+                    <a href="#scenario-a">Scenario A &mdash; "D" District (By-law 6593)</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">05</span>
+                    <a href="#scenario-b">Scenario B &mdash; "R1a" Zone (By-law 05-200)</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">06</span>
+                    <a href="#parking">Parking Lens</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">07</span>
+                    <a href="#massing">Physical Feasibility &amp; Massing</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">08</span>
+                    <a href="#hbu">Highest &amp; Best Use Conclusions</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">09</span>
+                    <a href="#risks">Gating Risks</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">10</span>
+                    <a href="#max-units">Maximum Unit Count Summary</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">11</span>
+                    <a href="#phase1-check">Phase 1 Completeness Check</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ═══ CONTENT ═══ -->
+        <div class="content">
+
+            <!-- ══ SECTION 01: SCOPE ══ -->
+            <section id="scope">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2>Scope &amp; Decision Frame</h2>
+                </div>
+
+                <p>This Phase 1 analysis determines the <strong>maximum plausible unit count</strong> and "highest and best use" from an entitlement perspective for new construction at 418 John Street North, Hamilton, under two zoning scenarios:</p>
+
+                <div class="scenario-grid">
+                    <div class="scenario-card scenario-a">
+                        <div class="scenario-label">Scenario A</div>
+                        <h4>Current "D" District</h4>
+                        <p>Former City of Hamilton By-law 6593 &mdash; Urban Protected Residential, One and Two Family Dwellings</p>
+                    </div>
+                    <div class="scenario-card scenario-b">
+                        <div class="scenario-label">Scenario B</div>
+                        <h4>Potential "R1a" Zone</h4>
+                        <p>City of Hamilton Zoning By-law 05-200 &mdash; Low Density Residential, Small Lot</p>
+                    </div>
+                </div>
+
+                <h3>HBU Decision Frame (Planning Lens)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Question</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Legally permissible</strong></td>
+                            <td>What does the Secondary Plan + zoning actually allow?</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Physically possible</strong></td>
+                            <td>What envelope do setbacks and height produce on this lot?</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Approval risk &amp; pathway</strong></td>
+                            <td>As-of-right vs minor variance vs OPA/ZBA &mdash; what is required?</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maximally productive</strong></td>
+                            <td>Maximum unit yield that is still realistically defensible?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ══ SECTION 02: PROPERTY FACTS ══ -->
+            <section id="property">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2>Property Facts</h2>
+                </div>
+
+                <h3>Location</h3>
+                <p>418 John Street North, Hamilton &mdash; West Harbour area per the planner memo.</p>
+
+                <h3>Lot Geometry (Planner Memo Values)</h3>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">18.5 m</span>
+                        <span class="stat-label">Frontage (60.70 ft)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">47.4 m</span>
+                        <span class="stat-label">Depth (155.51 ft)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">880.9 m&sup2;</span>
+                        <span class="stat-label">Lot Area (9,481.93 ft&sup2;)</span>
+                    </div>
+                </div>
+
+                <div class="callout-confirm callout">
+                    <div class="callout-title">To Confirm in Phase 2</div>
+                    <p>Legal description/PIN, survey/reference plan, and parcel register must be obtained and cross-referenced against these planner-memo figures.</p>
+                </div>
+
+                <h3>Existing Uses &amp; Buildings</h3>
+                <p>The planner memo identifies two existing structures on the property:</p>
+                <ul>
+                    <li>1-storey detached dwelling</li>
+                    <li>Detached automotive shop</li>
+                </ul>
+                <p>Because of the automotive-related use, a <strong>Record of Site Condition (RSC)</strong> will be required to support redevelopment. The planner memo recommends initiating environmental work early.</p>
+
+                <div class="callout-confirm callout">
+                    <div class="callout-title">To Confirm in Phase 2</div>
+                    <p>Exact historic uses, whether the automotive shop is current/active, and the precise MECP/RSC triggering pathway for the proposed change of use.</p>
+                </div>
+
+                <h3>Current Zoning Identification (GIS Screenshot)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zoning Code</td>
+                            <td><span class="badge badge-charcoal">D</span></td>
+                        </tr>
+                        <tr>
+                            <td>Parent By-law</td>
+                            <td>6593 (Former Hamilton)</td>
+                        </tr>
+                        <tr>
+                            <td>Amending By-law</td>
+                            <td>94-39</td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>Urban Protected Residential &mdash; One and Two Family Dwellings, Etc.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>This is directional confirmation; the controlling rules are in the by-law text cited in Section 04.</p>
+            </section>
+
+            <!-- ══ SECTION 03: POLICY CONTEXT ══ -->
+            <section id="policy">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2>Secondary Plan &amp; Policy Context</h2>
+                </div>
+
+                <h3>West Harbour (Setting Sail) Secondary Plan &mdash; Intent Signal</h3>
+
+                <div class="callout">
+                    <div class="callout-title">Low Density Residential Designation</div>
+                    <p>The Secondary Plan identifies "Low Density Residential" areas and provides a density range of <strong>25&ndash;60 units per gross hectare</strong>.</p>
+                </div>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Stable Areas Policy Direction</div>
+                    <p>Stable Areas are intended to remain stable; "significant physical change&hellip;is not anticipated." Development may occur, but it must be <strong>"compatible with the existing land use pattern and built form character."</strong> The plan supports "sensitive and compatible infill development" and encourages intensification where it respects context and compatibility.</p>
+                </div>
+
+                <h3>Translating the Density Range Into a Yield Estimate</h3>
+                <p>Using the planner memo lot area of approximately 0.08809 ha:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Density Target</th>
+                            <th>Calculation</th>
+                            <th>Theoretical Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Upper end (60 uph)</td>
+                            <td>0.08809 &times; 60</td>
+                            <td><strong>5.29 units</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Lower end (25 uph)</td>
+                            <td>0.08809 &times; 25</td>
+                            <td><strong>2.20 units</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout">
+                    <div class="callout-title">Interpretation</div>
+                    <p>Secondary Plan policy direction strongly aligns with outcomes in the <strong>2&ndash;5 unit range</strong> as the "policy-comfortable zone," assuming the lot area is accurate.</p>
+                </div>
+
+                <div class="callout-confirm callout">
+                    <div class="callout-title">To Confirm in Phase 2</div>
+                    <p>Whether any Secondary Plan sub-areas, site-specific policies, or overlays change these conclusions for this block.</p>
+                </div>
+            </section>
+
+            <!-- ══ SECTION 04: SCENARIO A ══ -->
+            <section id="scenario-a">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2>Scenario A &mdash; "D" District (By-law 6593)</h2>
+                </div>
+
+                <h3>Permitted Uses in D District (Strict Reading)</h3>
+                <p>In Section TEN &mdash; "D" Districts (Urban Protected Residential &mdash; One and Two Family Dwellings, etc.), permitted uses include:</p>
+                <ul>
+                    <li>(i) Private single-family dwelling</li>
+                    <li>(ii) Two-family dwelling</li>
+                    <li>Additional listed uses: kindergarten, child care centre, boarding/lodging/rooming house, church, public library, public park, private club, etc.</li>
+                </ul>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Key Constraint</div>
+                    <p>The by-law's named residential forms in D are <strong>single-family and two-family only</strong>. The "boarding/lodging/rooming house" permission increases intensity as "rooms," but these are not self-contained dwelling units and carry different building/fire/operations implications.</p>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-title">Bottom Line &mdash; By-Right Unit Count (D District)</div>
+                    <p><strong>By-right maximum self-contained dwelling units = 2</strong> (a two-family dwelling), based on the explicit permitted residential forms.</p>
+                    <p>If achieving 4 units relies on "secondary units/ADUs," that authority is not established in the D District text and must be validated in Phase 2 against whatever city-wide ADU permissions apply to Former Hamilton zones.</p>
+                </div>
+
+                <h3>Core Numerical Standards</h3>
+
+                <h4>Lot Minimums (for new lot creation / severance)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Form</th>
+                            <th>Min Lot Area</th>
+                            <th>Min Lot Width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Single-family</td>
+                            <td>360 m&sup2;</td>
+                            <td>12.0 m</td>
+                        </tr>
+                        <tr>
+                            <td>Two-family</td>
+                            <td>540 m&sup2;</td>
+                            <td>18.0 m</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Height &amp; Yards</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maximum storeys</td>
+                            <td>3 storeys</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum height</td>
+                            <td>14.0 m</td>
+                        </tr>
+                        <tr>
+                            <td>Minimum front yard</td>
+                            <td>6.0 m</td>
+                        </tr>
+                        <tr>
+                            <td>Minimum rear yard</td>
+                            <td>7.5 m</td>
+                        </tr>
+                        <tr>
+                            <td>Side yards (&le; 2.5 storeys / &le; 11.0 m)</td>
+                            <td>1.2 m each side</td>
+                        </tr>
+                        <tr>
+                            <td>Side yards (&gt; 2.5 storeys / &gt; 11.0 m)</td>
+                            <td><strong>2.7 m each side</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout">
+                    <div class="callout-title">Critical Design Implication</div>
+                    <p>You can build up to 14 m, but exceeding 11 m or 2.5 storeys triggers much larger side yards (2.7 m vs 1.2 m), which can significantly reduce usable floorplate width. This is the main reason "3 storeys" is not always practically achievable on narrower lots.</p>
+                </div>
+
+                <h3>Maximum New-Build Unit Yield (Entitlement-Driven)</h3>
+
+                <h4>A) Max By-Right (Strict D District)</h4>
+                <p><strong>Two-family dwelling (2 units)</strong> is the clear maximum self-contained unit count by right.</p>
+
+                <h4>B) Max Likely Defensible Without Re-designation</h4>
+                <p>Because the Secondary Plan Low Density range translates to about 2&ndash;5 units on this lot, the policy-aligned maximum is likely:</p>
+                <ul>
+                    <li><strong>2 units by-right</strong>, and possibly <strong>3&ndash;4 units</strong> only if there is a confirmed mechanism allowing additional self-contained units (e.g., lawful secondary units/ADUs applicable to this zone)</li>
+                </ul>
+
+                <div class="callout-confirm callout">
+                    <div class="callout-title">To Confirm</div>
+                    <p>The actual city-wide ADU / additional-unit permissions that apply to Former Hamilton By-law 6593 lands.</p>
+                </div>
+
+                <h4>C) Maximum the Planner Memo Believes Possible (Requires OPA + ZBA)</h4>
+                <p>The planner memo conclusion states:</p>
+                <ul>
+                    <li>Site can accommodate a two-family dwelling as-of-right</li>
+                    <li>Minor variances "may allow" street townhouse units</li>
+                    <li>Landwise opinion: a higher-density form with <strong>6&ndash;8 units</strong> would require an Official Plan Amendment + Zoning By-law Amendment</li>
+                </ul>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Important</div>
+                    <p>The 6&ndash;8 unit position is <strong>not "by-right D zoning"</strong> &mdash; it is an approval-dependent target requiring applications, fees, and City staff/Council support.</p>
+                </div>
+            </section>
+
+            <!-- ══ SECTION 05: SCENARIO B ══ -->
+            <section id="scenario-b">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2>Scenario B &mdash; "R1a" Zone (By-law 05-200)</h2>
+                </div>
+
+                <h3>Permitted Uses in R1a</h3>
+                <p>In 15.2.1.1 (Permitted Uses) &mdash; Low Density Residential, Small Lot (R1a) Zone, permitted residential forms include:</p>
+                <ul>
+                    <li>Single Detached Dwelling</li>
+                    <li>Semi-Detached Dwelling</li>
+                    <li>Duplex Dwelling</li>
+                    <li>Triplex Dwelling</li>
+                    <li>Fourplex Dwelling</li>
+                    <li>Street Townhouse</li>
+                </ul>
+                <p>Plus accessory uses/buildings and home business, etc.</p>
+
+                <div class="callout">
+                    <div class="callout-title">Bottom Line &mdash; By-Right Unit Count (R1a)</div>
+                    <p><strong>Fourplex Dwelling = 4 units by-right</strong>, assuming compliance with R1a regulations. Street townhouse could produce 3 units across the frontage, but fourplex is typically the "max units per lot" form in this zone without additional permissions.</p>
+                </div>
+
+                <h3>General R1a Zone Regulations</h3>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">30%</span>
+                        <span class="stat-label">Min Landscaped Area</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">264 m&sup2;</span>
+                        <span class="stat-label">Landscaping on This Lot</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">11.0 m</span>
+                        <span class="stat-label">Max Building Height</span>
+                    </div>
+                </div>
+
+                <h3>Fourplex &amp; Street Townhouse Standards in R1a</h3>
+
+                <h4>Fourplex Dwelling (R1a)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Requirement</th>
+                            <th>418 John St N</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Min lot area</td>
+                            <td>300 m&sup2;</td>
+                            <td><span class="badge badge-green">880.9 m&sup2; &mdash; Exceeds</span></td>
+                        </tr>
+                        <tr>
+                            <td>Min lot frontage</td>
+                            <td>10.0 m</td>
+                            <td><span class="badge badge-green">18.5 m &mdash; Exceeds</span></td>
+                        </tr>
+                        <tr>
+                            <td>Max front yard</td>
+                            <td>6.0 m</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>Min rear yard</td>
+                            <td>7.5 m</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>Min side yard</td>
+                            <td>1.2 m</td>
+                            <td>&mdash;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Street Townhouse (R1a)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Requirement</th>
+                            <th>Implication at 418</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Min lot area per unit</td>
+                            <td>165 m&sup2;</td>
+                            <td>880.9 &divide; 165 = 5.3 units (theoretical max)</td>
+                        </tr>
+                        <tr>
+                            <td>Min lot frontage per unit</td>
+                            <td>5.5 m</td>
+                            <td>18.5 &divide; 5.5 = 3.36 units &rarr; <strong>3 units</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Max front yard</td>
+                            <td>6.0 m</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>Min rear yard</td>
+                            <td>7.5 m</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>Min exterior side yard</td>
+                            <td>1.2 m</td>
+                            <td>&mdash;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>With 18.5 m frontage, a townhouse block could fit 3 units at 5.5 m each (= 16.5 m), leaving approximately 2.0 m for building articulation and side conditions. But <strong>3 townhouses = 3 units</strong>, which is still less than a 4-unit fourplex by-right.</p>
+
+                <div class="callout">
+                    <div class="callout-title">R1a Maximum Unit Yield</div>
+                    <p><strong>By-right maximum self-contained units: 4 (Fourplex Dwelling).</strong></p>
+                    <p>If there are separate permissions for additional accessory dwelling units (e.g., internal + garden suite), that could exceed 4 &mdash; but that requires confirmation from the applicable ADU framework in Phase 2.</p>
+                </div>
+            </section>
+
+            <!-- ══ SECTION 06: PARKING ══ -->
+            <section id="parking">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2>Parking Lens</h2>
+                </div>
+
+                <h3>Parking Rate Area 1 (If Confirmed)</h3>
+                <p>The parking extract notes that Parking Rate Area 1 has reduced parking requirements, including:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Use</th>
+                            <th>PRA 1 Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dwelling Units</td>
+                            <td><strong>No parking spaces required</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Multiple Dwelling (visitor)</td>
+                            <td>2 spaces + 0.05 spaces per dwelling unit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout">
+                    <div class="callout-title">Why This Matters</div>
+                    <p>If 418 John St N is truly in Parking Rate Area 1, then parking may stop being the "unit-killer" that it is elsewhere &mdash; especially for 4 units and even for 6&ndash;8 units. Reduced or zero parking requirements directly improve site utilization and project economics.</p>
+                </div>
+
+                <div class="callout-confirm callout">
+                    <div class="callout-title">To Confirm in Phase 2</div>
+                    <ul class="confirm-list">
+                        <li>Whether this specific parcel is in Parking Rate Area 1</li>
+                        <li>Which parking category the City applies to a fourplex / 6&ndash;8 unit form on this site</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ══ SECTION 07: MASSING ══ -->
+            <section id="massing">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <h2>Physical Feasibility &amp; Massing</h2>
+                </div>
+
+                <h3>Conceptual Building Envelope</h3>
+                <p>Using the planner memo lot dimensions (18.5 m &times; 47.4 m) with the standard yard requirements (front 6.0 m, rear 7.5 m, side 1.2 m each):</p>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">16.1 m</span>
+                        <span class="stat-label">Buildable Width</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">33.9 m</span>
+                        <span class="stat-label">Buildable Depth</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">~546 m&sup2;</span>
+                        <span class="stat-label">Per-Floor Envelope</span>
+                    </div>
+                </div>
+
+                <h3>Height Scenario Impact on Width</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zoning</th>
+                            <th>Max Height</th>
+                            <th>Side Yards</th>
+                            <th>Usable Width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>D District (&le; 11 m)</td>
+                            <td>11.0 m / 2.5 storeys</td>
+                            <td>1.2 m each</td>
+                            <td>16.1 m</td>
+                        </tr>
+                        <tr>
+                            <td>D District (&gt; 11 m)</td>
+                            <td>14.0 m / 3 storeys</td>
+                            <td>2.7 m each</td>
+                            <td><strong>13.1 m</strong> (width shrinks)</td>
+                        </tr>
+                        <tr>
+                            <td>R1a</td>
+                            <td>11.0 m</td>
+                            <td>1.2 m each</td>
+                            <td>16.1 m</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Interpretation</div>
+                    <p>This is a <strong>deep, wide lot</strong> by urban infill standards. The physical envelope likely supports 4 units comfortably and can physically support more &mdash; but the governing constraint becomes policy + zoning permissions + parking/servicing/environmental, not the physical envelope.</p>
+                    <p>R1a's 11 m height cap may be an advantage: it avoids the "widened side yard" trigger in D District, preserving more floorplate width.</p>
+                </div>
+            </section>
+
+            <!-- ══ SECTION 08: HBU CONCLUSIONS ══ -->
+            <section id="hbu">
+                <div class="section-header">
+                    <span class="section-number">08</span>
+                    <h2>Highest &amp; Best Use Conclusions</h2>
+                </div>
+
+                <div class="scenario-grid">
+                    <div class="scenario-card scenario-a">
+                        <div class="scenario-label">Scenario A &mdash; D District (By-law 6593)</div>
+                        <h4>HBU Conclusion</h4>
+                        <span class="scenario-units">2 units</span>
+                        <p><strong>Most defensible maximum (strict zoning):</strong> Two-family dwelling, by right.</p>
+                        <p><strong>Potential upside (to verify):</strong> 3&ndash;4 units if applicable ADU/secondary unit mechanism exists for Former Hamilton lands.</p>
+                        <p><strong>Approval-dependent max:</strong> 6&ndash;8 units per planner memo, requiring OPA + ZBA.</p>
+                    </div>
+                    <div class="scenario-card scenario-b">
+                        <div class="scenario-label">Scenario B &mdash; R1a (By-law 05-200)</div>
+                        <h4>HBU Conclusion</h4>
+                        <span class="scenario-units">4 units</span>
+                        <p><strong>By-right maximum:</strong> Fourplex Dwelling. Aligns well with Secondary Plan Low Density upper-end translation (~5.29 units theoretical).</p>
+                        <p><strong>Lowest entitlement friction.</strong> If the objective is maximum units with the cleanest approval pathway, R1a fourplex is the strongest target supported by documents right now.</p>
+                    </div>
+                </div>
+
+                <h3>Policy Tension to Acknowledge</h3>
+                <p>Secondary Plan Low Density / Stable Area policies point toward sensitive, compatible infill and a density range translating to roughly 2&ndash;5 units on this lot size. The planner memo's 6&ndash;8 unit target is not impossible, but it is <strong>not the "policy-comfortable" interpretation</strong> unless there are additional Secondary Plan provisions or a compelling amendment case.</p>
+            </section>
+
+            <!-- ══ SECTION 09: GATING RISKS ══ -->
+            <section id="risks">
+                <div class="section-header">
+                    <span class="section-number">09</span>
+                    <h2>Gating Risks</h2>
+                </div>
+
+                <h3>9.1 Environmental (Likely the #1 Schedule/Cost Risk)</h3>
+                <div class="callout">
+                    <div class="callout-title">Record of Site Condition Required</div>
+                    <p>Because of the existing automotive use, a <strong>Record of Site Condition</strong> will be required to support redevelopment. The planner memo recommends starting environmental work early. This is likely the single biggest variable for both timeline and budget.</p>
+                </div>
+
+                <h3>9.2 Approvals Pathway Risk (If Chasing 6&ndash;8 Units)</h3>
+                <p>The planner memo conclusion is clear: 6&ndash;8 units would require <strong>Official Plan Amendment + Zoning By-law Amendment</strong>. This means additional time, cost, and uncertainty relative to the by-right scenarios.</p>
+
+                <h3>9.3 Minor Variance Legal Test</h3>
+                <p>Under the Planning Act, a committee may authorize a minor variance if it is desirable for appropriate development and maintains the general intent and purpose of the by-law and official plan. This test will be applied explicitly in Phase 2 when the approvals strategy is built.</p>
+
+                <h3>Costs Referenced in Planner Memo (2026 Fees &mdash; To Confirm)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Application Type</th>
+                            <th>Fee (Planner Memo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Official Plan Amendment</td>
+                            <td>$47,175</td>
+                        </tr>
+                        <tr>
+                            <td>Complex Zoning By-law Amendment</td>
+                            <td>$32,780</td>
+                        </tr>
+                        <tr>
+                            <td>Minor Variance</td>
+                            <td>$4,105</td>
+                        </tr>
+                        <tr>
+                            <td>Consent</td>
+                            <td>$3,540</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>These fees must be checked against the current City fee schedule.</em></p>
+            </section>
+
+            <!-- ══ SECTION 10: MAX UNITS SUMMARY ══ -->
+            <section id="max-units">
+                <div class="section-header">
+                    <span class="section-number">10</span>
+                    <h2>Maximum Unit Count Summary</h2>
+                </div>
+
+                <div class="summary-box">
+                    <h3>As-of-Right vs Approval-Dependent</h3>
+
+                    <div class="summary-driver">
+                        <div class="driver-card">
+                            <h4>Scenario A &mdash; D District</h4>
+                            <p><strong style="font-size: 1.4rem; color: var(--color-orange);">2 units</strong><br>Two-family dwelling, by right</p>
+                        </div>
+                        <div class="driver-card">
+                            <h4>Scenario B &mdash; R1a</h4>
+                            <p><strong style="font-size: 1.4rem; color: var(--color-orange);">4 units</strong><br>Fourplex dwelling, by right</p>
+                        </div>
+                        <div class="driver-card">
+                            <h4>Approval-Dependent Target</h4>
+                            <p><strong style="font-size: 1.4rem; color: var(--color-orange);">6&ndash;8 units</strong><br>Per planner memo; requires OPA + ZBA</p>
+                        </div>
+                    </div>
+
+                    <p>Supported by documents reviewed. By-right scenarios represent the maximum self-contained dwelling units achievable without discretionary approvals. The 6&ndash;8 unit target is the planner's opinion of what the site could support through an amendment process.</p>
+                </div>
+            </section>
+
+            <!-- ══ SECTION 11: COMPLETENESS CHECK ══ -->
+            <section id="phase1-check">
+                <div class="section-header">
+                    <span class="section-number">11</span>
+                    <h2>Phase 1 Completeness Check</h2>
+                </div>
+
+                <h3>What We Can Support From Documents</h3>
+                <ul class="check-list">
+                    <li>Secondary Plan intent + Low Density range + Stable Area compatibility direction</li>
+                    <li>D District permitted forms + numeric standards (height, yards, lot minimums)</li>
+                    <li>R1a permitted forms + fourplex/townhouse minimums + height/landscaping rules</li>
+                    <li>Planner memo: lot dimensions, existing automotive shop, opinion that 6&ndash;8 units requires OPA+ZBA</li>
+                    <li>Environmental work / RSC likely required (planner memo flag)</li>
+                </ul>
+
+                <h3>What We Cannot Claim Yet (Phase 2 Confirmations Required)</h3>
+                <ul class="confirm-list">
+                    <li>Whether 418 is actually in Parking Rate Area 1 (PRA1 rules exist, but parcel assignment is unconfirmed)</li>
+                    <li>Whether "4 units under D zoning" is lawful via secondary units/ADU permissions on Former Hamilton By-law 6593 lands (needs ADU framework / amending by-law)</li>
+                    <li>Whether any Secondary Plan sub-area policies constrain townhouse forms on this block</li>
+                    <li>Whether the "5-year apply under old/new zoning" statement is accurate (needs City source)</li>
+                    <li>Legal description/PIN, survey, parcel register (lot geometry verification)</li>
+                    <li>Environmental site history and RSC pathway details</li>
+                </ul>
+            </section>
+
+        </div><!-- /content -->
+
+        <!-- ═══ FOOTER ═══ -->
+        <footer>
+            <div class="footer-logo">
+                <img src="./Shane_Logo.png" alt="Team Shane">
+            </div>
+            <p>Team Shane &mdash; Zoning &amp; Entitlement Analysis &mdash; 418 John Street North, Hamilton, Ontario &mdash; January 2026</p>
+            <p>Phase 1: Scope &amp; Standard. This document is prepared for internal use only. All interpretations are subject to confirmation in Phase 2.</p>
+        </footer>
+
+    </div><!-- /container -->
+</body>
+</html>

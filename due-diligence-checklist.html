@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>418 John Street North - Phase 2 Due Diligence Checklist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-orange: #FF7A3D;
+            --color-orange-light: rgba(255, 122, 61, 0.08);
+            --color-orange-mid: rgba(255, 122, 61, 0.15);
+            --color-charcoal: #3F3A37;
+            --color-beige: #EFE9E5;
+            --color-white: #FFFFFF;
+            --color-text: #1F1F1F;
+            --color-text-light: #5a5550;
+            --color-border: #e0dbd6;
+            --color-green: #2e7d32;
+            --color-green-light: rgba(46, 125, 50, 0.06);
+            --color-red: #c62828;
+            --color-red-light: rgba(198, 40, 40, 0.06);
+            --font-headline: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --radius: 6px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-beige);
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border-radius: var(--radius);
+            box-shadow: 0 1px 4px rgba(63, 58, 55, 0.08);
+            overflow: hidden;
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 48px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+        .header-logo { flex-shrink: 0; }
+        .header-logo img { width: 80px; height: 80px; border-radius: 50%; }
+        .header-text { flex: 1; }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--color-orange);
+        }
+        .header-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-sm);
+        }
+        header h1 {
+            font-family: var(--font-headline);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        /* ── Nav Tabs ── */
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-beige);
+        }
+        .nav-tabs a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-right: 1px solid var(--color-border);
+            transition: background 0.2s, color 0.2s;
+            text-align: center;
+        }
+        .nav-tabs a:last-child { border-right: none; }
+        .nav-tabs a:hover { background: var(--color-orange-light); color: var(--color-orange); }
+        .nav-tabs a.active {
+            background: var(--color-white);
+            color: var(--color-orange);
+            font-weight: 600;
+            border-bottom: 3px solid var(--color-orange);
+            margin-bottom: -1px;
+        }
+
+        /* ── Metadata Bar ── */
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg) 48px;
+            background: var(--color-beige);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .metadata-item {
+            padding: var(--spacing-md);
+            background: var(--color-white);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--color-orange);
+        }
+        .metadata-item label {
+            font-weight: 600;
+            color: var(--color-text-light);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .metadata-item span {
+            display: block;
+            color: var(--color-text);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* ── Disclaimer ── */
+        .disclaimer {
+            padding: var(--spacing-md) 48px;
+            background: var(--color-orange-light);
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        /* ── Table of Contents ── */
+        .toc {
+            padding: var(--spacing-xl) 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .toc h2 {
+            font-family: var(--font-headline);
+            font-size: 1.4rem;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-orange);
+            display: inline-block;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-sm);
+        }
+        .toc-number {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            color: var(--color-orange);
+            font-size: 1rem;
+            min-width: 28px;
+        }
+        .toc-item a {
+            color: var(--color-charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+        .toc-item a:hover { color: var(--color-orange); }
+
+        /* ── Content Area ── */
+        .content { padding: var(--spacing-2xl) 48px; }
+
+        section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--color-charcoal);
+        }
+        .section-number {
+            font-family: var(--font-headline);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-orange);
+        }
+        .section-header h2 {
+            font-family: var(--font-headline);
+            color: var(--color-charcoal);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0; padding: 0; border: none;
+        }
+
+        h3 {
+            font-family: var(--font-headline);
+            color: var(--color-charcoal);
+            font-size: 1.15rem;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+        h4 {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.75;
+        }
+
+        /* ── Callout Boxes ── */
+        .callout {
+            background: var(--color-beige);
+            border-left: 4px solid var(--color-orange);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        .callout-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-sm);
+        }
+        .callout p:last-child { margin-bottom: 0; }
+
+        .callout-charcoal {
+            background: rgba(63, 58, 55, 0.04);
+            border-left-color: var(--color-charcoal);
+        }
+        .callout-charcoal .callout-title { color: var(--color-charcoal); }
+
+        .callout-red {
+            background: var(--color-red-light);
+            border-left-color: var(--color-red);
+        }
+        .callout-red .callout-title { color: var(--color-red); }
+
+        .callout-green {
+            background: var(--color-green-light);
+            border-left-color: var(--color-green);
+        }
+        .callout-green .callout-title { color: var(--color-green); }
+
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            font-size: 0.85rem;
+        }
+        thead th {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        thead th:first-child { border-radius: var(--radius) 0 0 0; }
+        thead th:last-child { border-radius: 0 var(--radius) 0 0; }
+        td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
+        }
+        tr:nth-child(even) { background-color: rgba(239, 233, 229, 0.3); }
+        tr:hover { background-color: var(--color-orange-light); }
+
+        /* ── Lists ── */
+        ul, ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        li {
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.7;
+        }
+        li::marker { color: var(--color-orange); }
+
+        /* ── Checklist Items ── */
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        .checklist li {
+            padding: var(--spacing-md) var(--spacing-lg);
+            padding-left: calc(var(--spacing-lg) + 24px);
+            position: relative;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 0;
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li::before {
+            content: '';
+            position: absolute;
+            left: var(--spacing-lg);
+            top: calc(var(--spacing-md) + 4px);
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--color-border);
+            border-radius: 3px;
+            background: var(--color-white);
+        }
+        .checklist .item-label {
+            font-weight: 600;
+            color: var(--color-charcoal);
+            display: block;
+            font-size: 0.9rem;
+        }
+        .checklist .item-detail {
+            color: var(--color-text-light);
+            font-size: 0.84rem;
+            margin-top: 2px;
+        }
+
+        /* ── Decision Gate ── */
+        .decision-gate {
+            background: var(--color-red-light);
+            border-left: 4px solid var(--color-red);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 0.88rem;
+        }
+        .decision-gate-title {
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-red);
+            margin-bottom: 4px;
+        }
+
+        /* ── Why-It-Matters ── */
+        .why-box {
+            background: rgba(63, 58, 55, 0.03);
+            border-left: 3px solid var(--color-text-light);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 0.88rem;
+            color: var(--color-text-light);
+        }
+        .why-box strong {
+            color: var(--color-charcoal);
+        }
+
+        /* ── Badges ── */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-orange { background: var(--color-orange-mid); color: #c25a20; }
+        .badge-charcoal { background: rgba(63, 58, 55, 0.1); color: var(--color-charcoal); }
+        .badge-red { background: rgba(198, 40, 40, 0.1); color: var(--color-red); }
+        .badge-green { background: rgba(46, 125, 50, 0.1); color: var(--color-green); }
+
+        /* ── Stat Cards ── */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .stat-card {
+            background: var(--color-beige);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+        .stat-card .stat-value {
+            font-family: var(--font-headline);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-orange);
+            display: block;
+        }
+        .stat-card .stat-label {
+            font-size: 0.78rem;
+            color: var(--color-text-light);
+            margin-top: 4px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Summary Box ── */
+        .summary-box {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            border-radius: var(--radius);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-xl) 0;
+        }
+        .summary-box h3 { color: var(--color-orange); font-size: 1.3rem; margin-top: 0; }
+        .summary-box p { color: rgba(255, 255, 255, 0.85); }
+        .summary-box ul { color: rgba(255, 255, 255, 0.85); }
+        .summary-box li::marker { color: var(--color-orange); }
+
+        .summary-driver {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        .driver-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            border-left: 3px solid var(--color-orange);
+        }
+        .driver-card h4 {
+            color: var(--color-orange);
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+        }
+        .driver-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+        }
+
+        /* ── Data Room Grid ── */
+        .dataroom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        .dataroom-folder {
+            background: var(--color-beige);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            border-top: 4px solid var(--color-orange);
+        }
+        .dataroom-folder h4 {
+            font-family: var(--font-headline);
+            font-size: 1rem;
+            color: var(--color-charcoal);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+        }
+        .dataroom-folder .folder-code {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-orange);
+            margin-bottom: var(--spacing-xs);
+            display: block;
+        }
+        .dataroom-folder ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .dataroom-folder li {
+            padding: 4px 0;
+            padding-left: var(--spacing-lg);
+            position: relative;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .dataroom-folder li:last-child { border-bottom: none; }
+        .dataroom-folder li::before {
+            content: '\2192';
+            position: absolute;
+            left: 0;
+            color: var(--color-orange);
+            font-weight: 700;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--color-charcoal);
+            color: rgba(255, 255, 255, 0.5);
+            padding: var(--spacing-xl) 48px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+        .footer-logo { margin-bottom: var(--spacing-md); }
+        .footer-logo img { width: 44px; height: 44px; border-radius: 50%; opacity: 0.7; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            body { padding: 16px; }
+            header, .metadata, .toc, .content, .disclaimer, footer { padding-left: 24px; padding-right: 24px; }
+            .nav-tabs { flex-direction: column; }
+            .nav-tabs a { border-right: none; border-bottom: 1px solid var(--color-border); padding: var(--spacing-sm) 24px; font-size: 0.82rem; }
+            .nav-tabs a:last-child { border-bottom: none; }
+            .nav-tabs a.active { border-bottom: 1px solid var(--color-border); border-left: 3px solid var(--color-orange); margin-bottom: 0; }
+            header h1 { font-size: 1.8rem; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .summary-driver { grid-template-columns: 1fr; }
+            .dataroom-grid { grid-template-columns: 1fr; }
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; }
+            .toc-item a { color: var(--color-text); }
+            .nav-tabs { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ═══ HEADER ═══ -->
+        <header>
+            <div class="header-logo">
+                <img src="./Shane_Logo.png" alt="Team Shane Logo">
+            </div>
+            <div class="header-text">
+                <div class="header-eyebrow">Team Shane | Due Diligence Checklist</div>
+                <h1>418 John Street North</h1>
+                <div class="header-subtitle">Phase 2 &mdash; Confirmation Checklist &amp; Data Room Index</div>
+            </div>
+        </header>
+
+        <!-- ═══ NAV TABS ═══ -->
+        <nav class="nav-tabs">
+            <a href="./index.html">Market Research</a>
+            <a href="./zoning-entitlement.html">Zoning &amp; Entitlement (Phase 1)</a>
+            <a href="./due-diligence-checklist.html" class="active">Due Diligence Checklist (Phase 2)</a>
+        </nav>
+
+        <!-- ═══ METADATA ═══ -->
+        <div class="metadata">
+            <div class="metadata-item">
+                <label>Report Date</label>
+                <span>January 29, 2026</span>
+            </div>
+            <div class="metadata-item">
+                <label>Strategy</label>
+                <span>Maximum Unit Count, New Build</span>
+            </div>
+            <div class="metadata-item">
+                <label>Objective</label>
+                <span>Confirm every assumption affecting unit yield, approvals, cost/timeline, and deal viability</span>
+            </div>
+            <div class="metadata-item">
+                <label>Sequence</label>
+                <span>Deal-killers &rarr; Entitlement &rarr; Design &rarr; Process</span>
+            </div>
+        </div>
+
+        <!-- ═══ DISCLAIMER ═══ -->
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This checklist is a working document for project management purposes. It is not legal, planning, or engineering advice. Each item must be completed by the appropriate qualified professional. Items are sequenced to front-load items that could kill or materially change the deal before significant spend occurs.
+        </div>
+
+        <!-- ═══ TABLE OF CONTENTS ═══ -->
+        <nav class="toc">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <div class="toc-item">
+                    <span class="toc-number">0</span>
+                    <a href="#working-facts">Working Facts (Locked In)</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">A</span>
+                    <a href="#deal-killers">Go / No-Go Gating Checks</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">B</span>
+                    <a href="#zoning-dd">Zoning Due Diligence &mdash; D District</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">C</span>
+                    <a href="#parking-access">Parking &amp; Access</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">D</span>
+                    <a href="#future-zoning">Future Zoning &mdash; R1 / R1a</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">E</span>
+                    <a href="#approvals">Approvals &amp; Process</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">F</span>
+                    <a href="#downloads">Download List &amp; Overlays</a>
+                </div>
+                <div class="toc-item">
+                    <span class="toc-number">G</span>
+                    <a href="#dataroom">Data Room Index</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ═══ CONTENT ═══ -->
+        <div class="content">
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION 0: WORKING FACTS              -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="working-facts">
+                <div class="section-header">
+                    <span class="section-number">0</span>
+                    <h2>Working Facts (Locked In)</h2>
+                </div>
+
+                <p>These are treated as <strong>inputs</strong> for all analysis that follows, but remain subject to confirmation by survey and title where noted. If any change after we pull survey + parcel register, it can materially change unit yield.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fact</th>
+                            <th>Value</th>
+                            <th>Source / Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lot type</td>
+                            <td><strong>Interior lot</strong> (not corner)</td>
+                            <td><span class="badge badge-green">User-confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>Frontage</td>
+                            <td>~18.5 m (60.70 ft)</td>
+                            <td><span class="badge badge-orange">Planner memo &mdash; verify by survey</span></td>
+                        </tr>
+                        <tr>
+                            <td>Depth</td>
+                            <td>~47.4 m (155.51 ft)</td>
+                            <td><span class="badge badge-orange">Planner memo &mdash; verify by survey</span></td>
+                        </tr>
+                        <tr>
+                            <td>Lot area</td>
+                            <td>~880.9 m&sup2; (9,481.93 ft&sup2;)</td>
+                            <td><span class="badge badge-orange">Planner memo &mdash; verify by survey</span></td>
+                        </tr>
+                        <tr>
+                            <td>Driveway</td>
+                            <td>Private driveway (not shared)</td>
+                            <td><span class="badge badge-green">User-confirmed</span> <span class="badge badge-orange">Verify by title/easements</span></td>
+                        </tr>
+                        <tr>
+                            <td>Automotive shop</td>
+                            <td>Still active</td>
+                            <td><span class="badge badge-green">User-confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>Policy framework</td>
+                            <td>West Harbour (Setting Sail) Secondary Plan &mdash; Low Density Residential, Stable Area</td>
+                            <td><span class="badge badge-orange">Planner memo &mdash; confirm on Schedule M-2</span></td>
+                        </tr>
+                        <tr>
+                            <td>Current zoning</td>
+                            <td>By-law 6593 "D" District (Former Hamilton)</td>
+                            <td><span class="badge badge-green">GIS + planner memo</span></td>
+                        </tr>
+                        <tr>
+                            <td>Future zoning</td>
+                            <td>Consolidation may apply By-law 05-200 (planner expects ~R1)</td>
+                            <td><span class="badge badge-orange">Planner expectation &mdash; confirm with City</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION A: GO/NO-GO GATING CHECKS     -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="deal-killers">
+                <div class="section-header">
+                    <span class="section-number">A</span>
+                    <h2>Go / No-Go Gating Checks (Highest Priority)</h2>
+                </div>
+
+                <p>Complete these items <strong>before spending on design</strong>. Any one of these can change unit yield, block access, or kill the deal entirely.</p>
+
+                <!-- A1 -->
+                <h3>A1. Environmental / Active Auto Shop Risk (Possible Deal-Killer)</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> Because you have an active automotive shop, the environmental path is likely the single biggest uncertainty for cost + timeline + financing. The Secondary Plan explicitly ties development permissions/holding provisions to environmental remediation and submission of a Record of Site Condition in some contexts. Even where a formal "H" isn&rsquo;t on your parcel, the City commonly conditions approvals on ESA outcomes when there&rsquo;s a known/likely contaminating use history.
+                </div>
+
+                <h4>What to Obtain (Download / Order)</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Phase I ESA (new, addressed to you/financier if possible)</span>
+                        <span class="item-detail">CSA standard. Desktop review of historical uses, site reconnaissance, interviews.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Phase II ESA if recommended by Phase I</span>
+                        <span class="item-detail">Soil/groundwater sampling. Likely given active automotive use.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">RSC pathway confirmation</span>
+                        <span class="item-detail">If redevelopment involves a change to more sensitive use (residential intensification), confirm whether a Record of Site Condition is required and what standards apply. Get the City&rsquo;s position in writing.</span>
+                    </li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-title">Immediate Question</div>
+                    <p>Is the shop strictly <strong>storage/repair</strong>, or <strong>bodywork/painting</strong>, or <strong>fluid handling</strong>? This changes expected contaminants and remediation scope.</p>
+                </div>
+
+                <div class="decision-gate">
+                    <div class="decision-gate-title">Decision Gates</div>
+                    <ul>
+                        <li>Remediation costs/timeline exceed threshold.</li>
+                        <li>Vapour intrusion / soil removal constraints materially change build design or cost.</li>
+                    </ul>
+                </div>
+
+                <!-- A2 -->
+                <h3>A2. Legal Non-Conforming / Non-Complying Status of the Auto Shop</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> The current D District is "Urban Protected Residential &ndash; One and Two Family Dwellings, Etc." The auto shop likely exists as <strong>legal non-conforming</strong> (or as some form of accessory/previous approval). This affects: whether you can keep operating the shop until redevelopment, whether the shop can be expanded/altered, and whether the City will treat redevelopment as a straightforward conversion or a more complex change-of-use file.
+                </div>
+
+                <h4>What to Obtain (Download / Request)</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">City building permit history</span>
+                        <span class="item-detail">For both the house and the shop (construction date, use, alterations).</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Business licensing record / property standards orders</span>
+                        <span class="item-detail">If any exist.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Prior Committee of Adjustment decisions, variances, or permissions on title</span>
+                        <span class="item-detail">Any City letters, old permits, or prior approvals.</span>
+                    </li>
+                </ul>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Policy Hook (Secondary Plan)</div>
+                    <p>The Secondary Plan has policies about new development adjacent to non-complying uses needing mitigation (noise, dust, vibration, odour, etc.).</p>
+                </div>
+
+                <!-- A3 -->
+                <h3>A3. Confirm Lot Fabric + Legal Constraints (Survey + Title)</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> Even with confirmed frontage/depth, the legal evidence is needed because small differences change whether "two-family" standards are met cleanly and whether severance is realistic.
+                </div>
+
+                <h4>What to Obtain (Download / Order)</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Up-to-date boundary survey (OLS)</span>
+                        <span class="item-detail">Including existing buildings/footprints, grades, driveway location/width, fences/retaining walls, trees (diameter/condition), visible utility features, any encroachments.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Parcel Register / PIN (Teranet) and any reference plan</span>
+                        <span class="item-detail">Confirm legal description, dimensions, instruments, easements/ROWs, restrictive covenants.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Easements / rights-of-way</span>
+                        <span class="item-detail">Especially over/under the driveway, encroachments, and any shared servicing.</span>
+                    </li>
+                </ul>
+
+                <div class="decision-gate">
+                    <div class="decision-gate-title">What This Directly Affects</div>
+                    <ul>
+                        <li>Whether you truly meet the two-family minimum lot width cleanly (planner memo says yes).</li>
+                        <li>Whether a <strong>severance</strong> is physically/legally possible (not assumed).</li>
+                        <li>Whether you can preserve a compliant access route to rear parking / fire access.</li>
+                    </ul>
+                </div>
+
+                <!-- A4 -->
+                <h3>A4. Confirm the Actual Controlling Policy Lens</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> The Secondary Plan Low Density Residential policies specify permitted built forms (single detached, semi-detached, street townhouses), a density range (25&ndash;60 uph), and direction on compatibility/context (reflecting existing low density character, consistent lot dimensions and setbacks, garages at rear accessed from rear laneways "where feasible").
+                </div>
+
+                <h4>Due Diligence Task</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Pull Schedule M-2 mapping page for your exact parcel</span>
+                        <span class="item-detail">Confirm Low Density Residential designation (planner memo says yes).</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Check for site-specific policy areas</span>
+                        <span class="item-detail">Some sites have unique permissions like multiple dwellings / higher densities. Confirm whether any apply.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION B: ZONING DD - D DISTRICT     -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="zoning-dd">
+                <div class="section-header">
+                    <span class="section-number">B</span>
+                    <h2>Zoning Due Diligence &mdash; Current "D District" (By-law 6593)</h2>
+                </div>
+
+                <!-- B1 -->
+                <h3>B1. Confirm D District Standards + "Max Units on a Lot" Cap</h3>
+
+                <p>The planner memo&rsquo;s "as-of-right" conclusion is:</p>
+
+                <div class="callout">
+                    <div class="callout-title">Key Finding &mdash; 4-Unit Cap</div>
+                    <p><strong>Highest and best use as-of-right:</strong> two-family (duplex or semi) + secondary units &rarr; <strong>4 units possible</strong>.</p>
+                    <p>By-law 6593 Section 19 includes a clear statement that <strong>no more than four dwelling units</strong> are permitted on a lot in a "D" District (among others).</p>
+                </div>
+
+                <h4>Due Diligence Task</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Confirm whether any site-specific exceptions apply to your parcel</span>
+                        <span class="item-detail">Your GIS pop-up shows "Exception 1" fields but doesn&rsquo;t display details &mdash; this must be verified against the actual exception schedule/by-law.</span>
+                    </li>
+                </ul>
+
+                <!-- B2 -->
+                <h3>B2. Secondary Dwelling Units (Internal + Detached) &mdash; Confirm Design Constraints</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> By-law 6593 Section 19 defines and regulates both types of secondary dwelling units. These rules determine whether you can actually reach 4 units on this lot and what site-planning constraints apply.
+                </div>
+
+                <p>Key SDU regulations from By-law 6593 Section 19:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rule</th>
+                            <th>Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SDU (internal)</td>
+                            <td>Within the principal dwelling</td>
+                        </tr>
+                        <tr>
+                            <td>SDU &ndash; Detached</td>
+                            <td>Detached unit on same lot</td>
+                        </tr>
+                        <tr>
+                            <td>Parking (general)</td>
+                            <td>No additional parking required</td>
+                        </tr>
+                        <tr>
+                            <td>Parking (4th unit, detached)</td>
+                            <td><strong>1 parking space required</strong> if the detached SDU is the 4th dwelling unit</td>
+                        </tr>
+                        <tr>
+                            <td>Location (detached SDU)</td>
+                            <td>Only in rear and/or interior side yard</td>
+                        </tr>
+                        <tr>
+                            <td>Setbacks (detached SDU)</td>
+                            <td>Min 1.2 m from interior side and rear lot lines</td>
+                        </tr>
+                        <tr>
+                            <td>Access path</td>
+                            <td>Unobstructed path from street line to entrance (min width/height)</td>
+                        </tr>
+                        <tr>
+                            <td>Max height (detached SDU)</td>
+                            <td>6.0 m</td>
+                        </tr>
+                        <tr>
+                            <td>Max GFA</td>
+                            <td>Subject to by-law GFA rules (confirm exact metric in full clause)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Due Diligence Task &mdash; Concept Sketch Required</h4>
+                <p>Before "max unit count" is underwritten, produce a quick concept sketch showing:</p>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Where a detached SDU could fit without killing driveway access</span>
+                        <span class="item-detail">Show the 1.2 m setbacks, building separation, and remaining access width.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">How the unobstructed path from street to entrance works</span>
+                        <span class="item-detail">Must meet minimum width/height requirements per the by-law.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Whether parking is triggered</span>
+                        <span class="item-detail">If the detached SDU is unit #4, 1 parking space is required. Show where it fits.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION C: PARKING & ACCESS           -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="parking-access">
+                <div class="section-header">
+                    <span class="section-number">C</span>
+                    <h2>Parking &amp; Access Due Diligence</h2>
+                </div>
+
+                <p>Critical for "maximum unit count" even when parking is "not required." Site logistics can cap what&rsquo;s buildable.</p>
+
+                <!-- C1 -->
+                <h3>C1. Confirm Parking Rate Area Status (PRA 1 Claim)</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> The planner memo asserts the parcel is in Parking Rate Area 1 under By-law 05-200, with "no parking required for most residential uses."
+                </div>
+
+                <p>Parking By-law (05-200 Section 5) shows that in <strong>PRA 1</strong>:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Use Type</th>
+                            <th>PRA 1 Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Triplex / Fourplex / Duplex / Dwelling Unit (under 5 units)</td>
+                            <td><strong>No parking spaces required</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Multiple dwelling (5+ units) &mdash; resident parking</td>
+                            <td><strong>No resident parking required</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Multiple dwelling (5+ units) &mdash; visitor parking</td>
+                            <td>2 spaces + additional per-unit rate</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Due Diligence Tasks</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Pull the City&rsquo;s official Parking Rate Area map printout for the parcel</span>
+                        <span class="item-detail">Save as PDF. This is the single most impactful confirmation for site layout feasibility.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Even where parking is not required by zoning, confirm:</span>
+                        <span class="item-detail">Market expectations, garbage staging, fire access turning/clearance, and whether front yard parking will be opposed (planner memo warns front-yard parking for multi-unit is likely not supported).</span>
+                    </li>
+                </ul>
+
+                <div class="decision-gate">
+                    <div class="decision-gate-title">Decision Gate</div>
+                    <p>If not PRA1, parking requirements may materially reduce achievable unit count or require variances.</p>
+                </div>
+
+                <!-- C2 -->
+                <h3>C2. Driveway Geometry (Private Driveway = Major Asset &mdash; Verify It)</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> Your private driveway is a significant asset for site access and rear parking. But it must be confirmed as fully on-title and geometrically workable.
+                </div>
+
+                <p>From By-law 6593:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Parking stall minimum (non-parallel)</td>
+                            <td>2.7 m &times; 6.0 m</td>
+                        </tr>
+                        <tr>
+                            <td>90&deg; maneuvering aisle</td>
+                            <td>6.0 m</td>
+                        </tr>
+                        <tr>
+                            <td>Driveway width</td>
+                            <td>Varies by number of spaces; backing limitations may apply</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>What to Confirm with Survey + Concept Sketch</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Clear width, setbacks, and whether driveway is fully on-title</span>
+                        <span class="item-detail">Even "private" driveways sometimes have easements.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Whether it can support:</span>
+                        <span class="item-detail">Rear parking arrangement, construction access, fire department access expectations (even if not a formal fire route).</span>
+                    </li>
+                </ul>
+
+                <!-- C3 -->
+                <h3>C3. Fire Access and Building Code Feasibility</h3>
+
+                <div class="why-box">
+                    <strong>Why it matters:</strong> Even if zoning and parking are fine, exiting, fire separations, and access can cap the number of units. Part 9 vs Part 3 threshold is critical for cost.
+                </div>
+
+                <h4>Get</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Quick code sanity check by a designer</span>
+                        <span class="item-detail">Part 9 / Part 3 threshold issues depending on size, height, and unit count.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Fire/Building Division pre-consultation (or code consultant)</span>
+                        <span class="item-detail">Access routes, hydrant proximity, fire department connection placement.</span>
+                    </li>
+                </ul>
+
+                <!-- C4 -->
+                <h3>C4. Waste Collection Feasibility</h3>
+
+                <h4>Get</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">City waste pickup requirements for small multi-unit buildings</span>
+                        <span class="item-detail">Bin size, set-out protocol, collection point requirements. R1a fourplex rules address waste storage location (enclosed, not in front yard).</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Concept plan showing compliant waste enclosure</span>
+                        <span class="item-detail">Integrated into the site layout concept.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION D: FUTURE ZONING              -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="future-zoning">
+                <div class="section-header">
+                    <span class="section-number">D</span>
+                    <h2>Future Zoning Scenario &mdash; By-law 05-200 "R1 / R1a"</h2>
+                </div>
+
+                <p>Parallel feasibility for a future consolidated zoning result. The planner expects something like Low Density Residential (R1) and references additional forms.</p>
+
+                <div class="callout callout-charcoal">
+                    <div class="callout-title">Note</div>
+                    <p>The exact 05-200 "Additional Dwelling Unit" regulations text still requires verification. Treat the items below as due diligence tasks, not final conclusions.</p>
+                </div>
+
+                <h4>What to Confirm</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Exact future zone the City intends for your parcel</span>
+                        <span class="item-detail">R1 vs R1a vs something else, and whether any special schedules apply.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Permitted uses in that zone</span>
+                        <span class="item-detail">Triplex / fourplex / townhouse / multiple dwelling.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Zone standards</span>
+                        <span class="item-detail">Height, setbacks, lot coverage.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Additional Dwelling Unit (ADU) rules under 05-200 Section 4</span>
+                        <span class="item-detail">Internal + detached. This matters for "maximum unit count" under the future zone.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">"5-year apply under old or new zoning" transition provision</span>
+                        <span class="item-detail">Must-confirm in writing with staff (email) or by finding the exact transition provision in the implementing by-law/report. This is a major strategic lever.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION E: APPROVALS & PROCESS        -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="approvals">
+                <div class="section-header">
+                    <span class="section-number">E</span>
+                    <h2>Approvals &amp; Process Due Diligence</h2>
+                </div>
+
+                <p>What path matches what unit count?</p>
+
+                <!-- E1 -->
+                <h3>E1. As-of-Right Baseline (Confirm, Then Underwrite)</h3>
+
+                <div class="callout">
+                    <div class="callout-title">Current Position</div>
+                    <p>Under current D District + Secondary Plan LDR, the planner memo&rsquo;s as-of-right position is <strong>4 units</strong> (two-family + secondary units). By-law 6593 supports the 4-unit cap in D District lots where secondary units apply.</p>
+                </div>
+
+                <h4>Due Diligence &mdash; Produce a Concept That Meets:</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Secondary Plan compatibility policies</span>
+                        <span class="item-detail">Scale/character, setbacks context, rear garage access "where feasible."</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Secondary-unit standards (if used for units 3 + 4)</span>
+                        <span class="item-detail">Internal SDU and/or detached SDU per By-law 6593 Section 19 requirements.</span>
+                    </li>
+                </ul>
+
+                <!-- E2 -->
+                <h3>E2. Minor Variance / Consent / Amendments (If Targeting 6&ndash;8+ Units)</h3>
+
+                <div class="why-box">
+                    <strong>Context:</strong> Planner memo suggests 6&ndash;8 units may require OPA/ZBA and strong design/parking solutions. Street townhouses are noted as excluded in D District within this Secondary Plan area (per the planner&rsquo;s reading/interpretation).
+                </div>
+
+                <p>Planning Act s.45 allows "minor variance" from the zoning by-law. The four tests:</p>
+                <ul>
+                    <li>Desirable for appropriate development</li>
+                    <li>Maintains general intent and purpose of the by-law</li>
+                    <li>Maintains general intent and purpose of the official plan</li>
+                    <li>Is minor in nature</li>
+                </ul>
+
+                <h4>Due Diligence Tasks (If Chasing &gt;4 Units Under D)</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Pre-consult with City Planning</span>
+                        <span class="item-detail">Get written notes. Understand staff position on intensity in this Stable Area context.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">Build a "four tests" rationale package</span>
+                        <span class="item-detail">Only after you have a concept plan, streetscape context, and the environmental path is understood.</span>
+                    </li>
+                    <li>
+                        <span class="item-label">10&ndash;20 nearby CoA decisions</span>
+                        <span class="item-detail">Minor variances + consents within the same Secondary Plan area, preferably within a few blocks. Look for: reduced lot widths, reduced side yards, multi-unit permissions, parking variances. This is your strongest predictor of success.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION F: DOWNLOAD LIST + OVERLAYS   -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="downloads">
+                <div class="section-header">
+                    <span class="section-number">F</span>
+                    <h2>Download List &amp; Overlays</h2>
+                </div>
+
+                <p>Send PDFs / screenshots as you collect them. Organized by priority.</p>
+
+                <h3>Must-Have (Developer-Ready Report Requires These)</h3>
+                <ol>
+                    <li><strong>Survey (OLS)</strong> + legal description</li>
+                    <li><strong>Parcel Register / PIN</strong> + reference plan(s)</li>
+                    <li><strong>City GIS printouts</strong> (as PDFs/screenshots) for:
+                        <ul>
+                            <li>Zoning &amp; exceptions layer (showing any exception numbers)</li>
+                            <li>Parking Rate Area map (to confirm PRA 1 claim)</li>
+                            <li>Secondary Plan Schedule M-2 excerpt for the parcel</li>
+                        </ul>
+                    </li>
+                    <li><strong>Building permit history</strong> (house + auto shop)</li>
+                    <li><strong>Phase I ESA</strong> (and Phase II if triggered)</li>
+                    <li><strong>Servicing info</strong> (water, sanitary, storm; any combined sewer notes)</li>
+                    <li><strong>Heritage register check</strong> (whether listed/designated; and any heritage district)</li>
+                </ol>
+
+                <h3>Strongly Recommended (Reduces Surprise Conditions)</h3>
+                <ol start="8">
+                    <li><strong>Conservation Authority regulated area map</strong> (HCA) + floodplain/hazard layers</li>
+                    <li><strong>Tree inventory / arborist letter</strong> (if mature trees constrain buildable area)</li>
+                    <li><strong>Transportation / road widening info</strong> for John St N (Secondary Plan notes setbacks must account for required widenings)</li>
+                </ol>
+
+                <h3>Other Critical Overlays</h3>
+
+                <h4>Heritage / Cultural Heritage Landscapes</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Hamilton heritage register lookup</span>
+                        <span class="item-detail">For the address and the immediate block.</span>
+                    </li>
+                </ul>
+                <div class="decision-gate">
+                    <div class="decision-gate-title">Decision Gate</div>
+                    <p>Heritage designation/listing can add cost/time and constrain demolition and new-build form.</p>
+                </div>
+
+                <h4>Conservation Authority Regulated Areas / Floodplain</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">HCA regulated area mapping screenshot</span>
+                        <span class="item-detail">For the parcel. Hamilton Conservation Authority mapping.</span>
+                    </li>
+                </ul>
+                <div class="decision-gate">
+                    <div class="decision-gate-title">Decision Gate</div>
+                    <p>Any regulated area can trigger additional permits and constrain building footprint.</p>
+                </div>
+
+                <h4>Rail Noise/Vibration Proximity Triggers</h4>
+                <ul class="checklist">
+                    <li>
+                        <span class="item-label">Map showing rail distance</span>
+                        <span class="item-detail">Secondary Plan references feasibility studies related to noise/vibration within 500 m of rail corridors. Confirm whether studies are required for your application type.</span>
+                    </li>
+                </ul>
+
+                <h3>Targeted Questions (To Avoid Wrong Assumptions)</h3>
+                <div class="callout">
+                    <div class="callout-title">Three Questions to Answer</div>
+                    <ol>
+                        <li><strong>Rear laneway:</strong> Is there any rear lane access behind the lot, or is access only via the front driveway? (Secondary Plan prefers rear garage access "where feasible.")</li>
+                        <li><strong>Driveway location:</strong> Is the driveway fully on your lot, or does it rely on any shared/right-of-way arrangement? (Even "private" driveways sometimes have easements.)</li>
+                        <li><strong>Shop operations:</strong> Any painting/bodywork, or strictly mechanical? Any known spills or underground storage historically?</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════ -->
+            <!-- SECTION G: DATA ROOM INDEX            -->
+            <!-- ══════════════════════════════════════ -->
+            <section id="dataroom">
+                <div class="section-header">
+                    <span class="section-number">G</span>
+                    <h2>Data Room Index</h2>
+                </div>
+
+                <p>Recommended folder structure for the project data room. Upload documents as they are obtained. Once must-have items are collected, this checklist converts into a <strong>confirmation matrix</strong>: Assumption &rarr; Evidence We Have &rarr; Evidence Still Needed &rarr; Impact If Wrong &rarr; Mitigation / Approval Pathway.</p>
+
+                <div class="dataroom-grid">
+                    <div class="dataroom-folder">
+                        <span class="folder-code">00</span>
+                        <h4>Title &amp; Survey</h4>
+                        <ul>
+                            <li>Parcel register (PIN)</li>
+                            <li>Survey / R-plan</li>
+                            <li>Title insurance / lawyer summary</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">01</span>
+                        <h4>Planning Policy</h4>
+                        <ul>
+                            <li>West Harbour Secondary Plan <span class="badge badge-green">Uploaded</span></li>
+                            <li>Schedule M-2 mapping excerpt</li>
+                            <li>City staff reports re: zoning conversion / transition</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">02</span>
+                        <h4>Zoning</h4>
+                        <ul>
+                            <li>GIS zoning screenshot (with exceptions)</li>
+                            <li>6593 consolidation <span class="badge badge-green">Uploaded</span></li>
+                            <li>05-200 R1a extract <span class="badge badge-green">Uploaded</span></li>
+                            <li>Parking Rate Area map screenshot</li>
+                            <li>Exception / special requirement text</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">03</span>
+                        <h4>Environmental</h4>
+                        <ul>
+                            <li>Phase I ESA + reliance letters</li>
+                            <li>Phase II ESA</li>
+                            <li>Remediation plan / cost memo</li>
+                            <li>RSC pathway documentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">04</span>
+                        <h4>Building &amp; Permits</h4>
+                        <ul>
+                            <li>Building permit history (house + shop)</li>
+                            <li>Business licensing records</li>
+                            <li>Prior CoA decisions / variances on title</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">05</span>
+                        <h4>Precedents</h4>
+                        <ul>
+                            <li>CoA decisions (10&ndash;20 nearby)</li>
+                            <li>Any nearby rezonings / OPAs</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">06</span>
+                        <h4>Servicing &amp; Infrastructure</h4>
+                        <ul>
+                            <li>Water, sanitary, storm servicing info</li>
+                            <li>Combined sewer notes</li>
+                            <li>Transportation / road widening info</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">07</span>
+                        <h4>Overlays &amp; Other</h4>
+                        <ul>
+                            <li>Heritage register lookup</li>
+                            <li>HCA regulated area map</li>
+                            <li>Rail noise/vibration assessment</li>
+                            <li>Tree inventory / arborist letter</li>
+                        </ul>
+                    </div>
+
+                    <div class="dataroom-folder">
+                        <span class="folder-code">08</span>
+                        <h4>Concept Design</h4>
+                        <ul>
+                            <li>D-scenario: two-family + SDU concept sketch</li>
+                            <li>R1a scenario: fourplex concept</li>
+                            <li>"Stretch" 6&ndash;8 unit concept (if pursued)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /content -->
+
+        <!-- ═══ FOOTER ═══ -->
+        <footer>
+            <div class="footer-logo">
+                <img src="./Shane_Logo.png" alt="Team Shane">
+            </div>
+            <p>Team Shane &mdash; Phase 2 Due Diligence Checklist &mdash; 418 John Street North, Hamilton, Ontario &mdash; January 2026</p>
+            <p>This document is a working checklist for internal use only. Each item must be completed by the appropriate qualified professional.</p>
+        </footer>
+
+    </div><!-- /container -->
+</body>
+</html>
