@@ -533,6 +533,73 @@
             margin: 0;
         }
 
+        /* ── Image Banners ── */
+        .section-banner {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            object-position: center 40%;
+            display: block;
+        }
+
+        .inline-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .inline-image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        .inline-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .image-caption {
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            text-align: center;
+            margin-top: calc(-1 * var(--spacing-md));
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 220px;
+            }
+
+            .section-banner {
+                height: 180px;
+            }
+
+            .inline-image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .inline-image {
+                height: 160px;
+            }
+        }
+
         /* ── Footer ── */
         footer {
             background: var(--color-charcoal);
@@ -621,6 +688,9 @@
                 <div class="header-subtitle">Hamilton, Ontario &mdash; Market Research Profile</div>
             </div>
         </header>
+
+        <!-- ═══ HERO BANNER ═══ -->
+        <img class="hero-banner" src="https://images.unsplash.com/photo-1747705946478-cd7d305226fc?w=1920&q=80&fit=crop" alt="Downtown urban streetscape at dusk">
 
         <!-- ═══ METADATA ═══ -->
         <div class="metadata">
@@ -714,6 +784,11 @@
                     <p>The immediate area benefits from proximity to the <strong>Hamilton GO Centre</strong> (480 m south on John St S, approximately 5&ndash;6 minute walk), making this highly accessible for commuters to Toronto and the broader GTA.</p>
                 </div>
 
+                <div class="inline-image-grid">
+                    <img src="https://images.unsplash.com/photo-1624755298656-b8565abb35e1?w=800&q=80&fit=crop" alt="Vibrant street dining scene">
+                    <img src="https://images.unsplash.com/photo-1766807342320-5f93271f4444?w=800&q=80&fit=crop" alt="Waterfront boardwalk and green space">
+                </div>
+
                 <h3>Nature &amp; Recreation</h3>
                 <h4>Within 1 km Radius</h4>
                 <ul>
@@ -755,6 +830,7 @@
                 </ul>
 
                 <h3>GO Transit &amp; Commuting</h3>
+                <img class="inline-image" src="https://images.unsplash.com/photo-1765305976097-c962d1a7f94f?w=1400&q=80&fit=crop" alt="Commuter train platform">
                 <table>
                     <thead>
                         <tr>
@@ -1024,6 +1100,7 @@
                 </div>
 
                 <h3>Dwelling Types in Downtown / North Hamilton</h3>
+                <img class="section-banner" src="https://images.unsplash.com/photo-1759782180566-cf30776a782c?w=1400&q=80&fit=crop" alt="Victorian-era residential architecture">
 
                 <h4>Historical Stock (Pre-1980)</h4>
                 <ul>
@@ -1975,6 +2052,8 @@
                     <span class="section-number">09</span>
                     <h2>Final Summary &amp; Market Opportunity</h2>
                 </div>
+
+                <img class="section-banner" src="https://images.unsplash.com/photo-1577872134008-2032c595ecc3?w=1400&q=80&fit=crop" alt="Canadian city skyline aerial view">
 
                 <div class="summary-box">
                     <h3>Three Market Drivers at 418 John Street North</h3>
