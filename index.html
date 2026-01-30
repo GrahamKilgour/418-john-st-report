@@ -63,6 +63,23 @@
             color: var(--color-white);
             padding: var(--spacing-2xl) 48px;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .header-text {
+            flex: 1;
         }
 
         header::after {
@@ -520,9 +537,20 @@
         footer {
             background: var(--color-charcoal);
             color: rgba(255, 255, 255, 0.5);
-            padding: var(--spacing-lg) 48px;
+            padding: var(--spacing-xl) 48px;
             text-align: center;
             font-size: 0.75rem;
+        }
+
+        .footer-logo {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            opacity: 0.7;
         }
 
         /* ── Responsive ── */
@@ -584,9 +612,14 @@
 
         <!-- ═══ HEADER ═══ -->
         <header>
-            <div class="header-eyebrow">Team Shane | Due Diligence &amp; Feasibility Study</div>
-            <h1>418 John Street North</h1>
-            <div class="header-subtitle">Hamilton, Ontario &mdash; Market Research Profile</div>
+            <div class="header-logo">
+                <img src="./Shane_Logo.png" alt="Team Shane Logo">
+            </div>
+            <div class="header-text">
+                <div class="header-eyebrow">Team Shane | Due Diligence &amp; Feasibility Study</div>
+                <h1>418 John Street North</h1>
+                <div class="header-subtitle">Hamilton, Ontario &mdash; Market Research Profile</div>
+            </div>
         </header>
 
         <!-- ═══ METADATA ═══ -->
@@ -1991,6 +2024,9 @@
 
         <!-- ═══ FOOTER ═══ -->
         <footer>
+            <div class="footer-logo">
+                <img src="./Shane_Logo.png" alt="Team Shane">
+            </div>
             <p>Team Shane &mdash; Due Diligence &amp; Feasibility Study &mdash; 418 John Street North, Hamilton, Ontario &mdash; January 2026</p>
             <p>This document is prepared for internal use only. Market data is directional and should be verified independently.</p>
         </footer>
